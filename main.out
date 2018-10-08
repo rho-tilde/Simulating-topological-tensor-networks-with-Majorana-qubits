@@ -1,0 +1,23 @@
+\BOOKMARK [0][-]{section*.2}{Simulating topological tensor networks with Majorana qubits}{}% 2
+\BOOKMARK [1][-]{section*.1}{Abstract}{section*.2}% 1
+\BOOKMARK [1][-]{section*.3}{Introduction}{section*.2}% 3
+\BOOKMARK [1][-]{section*.4}{Majorana Cooper Box Networks}{section*.2}% 4
+\BOOKMARK [2][-]{section*.5}{Majorana Cooper Box}{section*.4}% 5
+\BOOKMARK [2][-]{section*.9}{Tunneling Hamiltonian}{section*.4}% 6
+\BOOKMARK [2][-]{section*.11}{MCB Pauli operators}{section*.4}% 7
+\BOOKMARK [2][-]{section*.14}{Effective low-energy theory}{section*.4}% 8
+\BOOKMARK [2][-]{section*.22}{Destructive interference mechanisms and Hamiltonian design}{section*.4}% 9
+\BOOKMARK [1][-]{section*.31}{Engineering multi-qubit operators}{section*.2}% 10
+\BOOKMARK [2][-]{section*.32}{Product operators}{section*.31}% 11
+\BOOKMARK [2][-]{section*.37}{Matrix product operators}{section*.31}% 12
+\BOOKMARK [2][-]{section*.44}{Repetition code}{section*.31}% 13
+\BOOKMARK [2][-]{section*.50}{Bell states}{section*.31}% 14
+\BOOKMARK [2][-]{section*.54}{Synthesizing design structures}{section*.31}% 15
+\BOOKMARK [1][-]{section*.56}{Simulating topological tensor networks}{section*.2}% 16
+\BOOKMARK [2][-]{section*.57}{PEPS representation of string-net ground states}{section*.56}% 17
+\BOOKMARK [2][-]{section*.66}{Encoded projected entangled pair states}{section*.56}% 18
+\BOOKMARK [2][-]{section*.79}{Double semion MCB network}{section*.56}% 19
+\BOOKMARK [1][-]{section*.87}{Conclusions and Outlook}{section*.2}% 20
+\BOOKMARK [1][-]{section*.88}{Acknowledgments}{section*.2}% 21
+\BOOKMARK [1][-]{section*.89}{Perturbation analysis}{section*.2}% 22
+\BOOKMARK [1][-]{section*.90}{References}{section*.2}% 23

@@ -1,0 +1,389 @@
+\documentclass[
+%aps,prl,
+onecolumn,
+superscriptaddress,
+amsmath,
+amssymb,
+notitlepage,
+11pt,
+tightenlines,
+hyperref
+]{revtex4-1}
+
+
+
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{upgreek}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+\usepackage{placeins}
+\usepackage{dcolumn}
+\usepackage{hyperref}
+
+
+
+% Packages
+\usepackage{filecontents}
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage[english]{babel}
+%\usepackage[final]{pdfpages}
+%\usepackage[pdftex,usenames]{color}
+%\usepackage{graphicx}
+%\usepackage{subfig} 
+%\usepackage{caption} 
+%\usepackage{subcaption} 
+%\urlstyle{same}
+%\usepackage[strings]{underscore}
+%\usepackage{amsmath}
+%\usepackage{eurosym}
+\usepackage{centernot}
+\usepackage{mathtools}
+% \usepackage{setspace}
+%\usepackage{times}
+%\usepackage{avant}
+\usepackage{ifthen}
+% \usepackage{enumitem}
+% \setlist{nolistsep,itemsep=\parskip,labelindent=0pt,leftmargin=\parindent,font=\normalfont}
+% \newlist{notationoverview}{description}{10}
+% \setlist[notationoverview]{nolistsep,itemsep=0pt,labelindent=0pt,leftmargin=0.5\textwidth,font=\normalfont,style=sam
+%  eline}
+%\setlist[description]{font=\normalfont\itshape}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations}
+\usetikzlibrary{positioning}
+%\usetikzlibrary{shapes} 
+%\usepackage{pgf}
+\usepackage{pgfplots}
+%\usepackage{pgfbaseimage}
+\usepackage{xxcolor}
+\definecolor{structure}{rgb}{0.23,0.4,0.7}
+%\usepackage{mathstyle} % must be loaded after tikz and amsmath (nicer super and subscripts but breaks mathchoice)
+%\usepackage{cancel}
+\usepackage[normalem]{ulem}
+
+%Load hyperref last\dots
+%\usepackage[pdftex,bookmarks,colorlinks=true,pdfusetitle]{hyperref}
+%\usepackage[pdftex,bookmarks,colorlinks=false,pdfborder={0 0 0},pdfusetitle]{hyperref}
+
+% \pgfrealjobname{dissertation}
+% \newcommand{\inputTikZ}[1]{%
+%   \beginpgfgraphicnamed{tikz/#1-external}%
+%   \input{tikz/#1.tikz}%
+%   \endpgfgraphicnamed%
+% }
+
+% Theorems
+% \newtheoremstyle{mystyle}% name
+% {\parskip}% space above
+% {0pt}% space below
+% {\itshape}% body font
+% {}% indent amount
+% {\bfseries}% theorem head font
+% {\normalfont{.}}% punctuation after theorem head
+% {.5em}% space after theorem head
+% {}% theorem head spec
+% \theoremstyle{mystyle}
+
+% \numberwithin{equation}{section}
+% \numberwithin{figure}{section}
+
+\newtheorem{lemma}{Lemma}
+% \numberwithin{lemma}{section}
+\newtheorem{theorem}{Theorem}
+% \numberwithin{theorem}{section}
+\newtheorem{corollary}{Corollary}
+% \numberwithin{corollary}{section}
+\newtheorem{definition}{Definition}
+% \numberwithin{definition}{section}
+\newtheorem{conjecture}{Conjecture}
+% \numberwithin{conjecture}{section}
+\newtheorem{observation}{Observation}
+\newtheorem{axiom}{Axiom}
+% \numberwithin{observation}{section}
+
+% Compatibility command with LaTeX Beamer
+\newsavebox{\blocksavebox}
+\newenvironment{block}[1]{%
+\begin{lrbox}{\blocksavebox}%
+\begin{minipage}%
+%{\dimexpr\columnwidth-2\fboxsep\relax}%
+{\linewidth}%
+}{%
+\end{minipage}\end{lrbox}%
+% \begin{tikzpicture}
+%   \node (blocknode) {\usebox{\blocksavebox}};
+%   \draw[rounded corners=0.2cm] (blocknode.north east) rectangle (blocknode.south west);
+% \end{tikzpicture}%
+\usebox{\blocksavebox}
+}
+\newcommand{\uncover}[4]{#4}
+\newcommand{\only}[4]{#4}
+\newcommand{\hover}[4]{#4}
+\definecolor{niceblue}{rgb}{0.33,0.5,0.8}
+
+
+
+% Temporary
+%\newcommand{\refsub}[1]{MISSING REFERENCE}
+\newcommand{\refsub}[2]{\hyperref[#1]{\ref*{#1}#2}}
+\newcommand{\refitem}[1]{\mbox{(\ref{#1})}}
+
+% Listings
+%\setkomafont{descriptionlabel}{\it}
+
+% Captions
+%\captionsetup{labelfont=bf,labelsep=period,textfont=small} %is done by koma script
+%\captionsetup[subfigure]{font={small},labelfont={small}}
+
+% Hacks and fixes
+%\mathcode `f="8000 %produces an error for each f in math mode useful for changes in notation.
+%\DeclareMathSymbol{f}{\mathalpha}{operators}{`Y} %replaces all f by Y useful for changes in notation.
+
+\newcommand{\+}{\mkern2mu}
+\newcommand{\coloneqq}{\mathrel{\vcentcolon\mkern-1.2mu=}} %fix a bug in the old version of amsmath
+\newcommand{\eqqcolon}{\mathrel{=\mkern-1.2mu\vcentcolon}}
+
+% Shortcuts
+
+\newcommand{\union}{\cup}
+\newcommand{\intersection}{\cap}
+\newcommand{\dunion}{\mathbin{\dot{\cup}}}
+%\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceiling}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\texteqref}[1]{Eq.~\eqref{#1}}
+\newcommand{\argdot}{{\,\cdot\,}}
+\newcommand{\oftype}{\colon}
+\newcommand{\suchthat}{\colon}
+%\newcommand{\itholds}{\ifinner :\ \else :\quad \fi}
+\newcommand{\itholds}{\colon\mathchoice{\quad}{}{}{}}
+\renewcommand{\max}{\mathchoice{\operatorname*{max}}{\operatorname*{max}}{\mathrm{max}}{\mathrm{max}}} %It allows you to use \max both as a math operator (like in \max_{x\in[0,1]} x^2 = 1) and in sub- and superscripts (like in f_\max) and it will in both cases be typeset in the correct font and with the correct spacing.
+\renewcommand{\min}{\mathchoice{\operatorname*{min}}{\operatorname*{min}}{\mathrm{min}}{\mathrm{min}}}
+%\newcommand{\img}{\mathchoice{\operatorname*{img}}{\operatorname*{img}}{\mathrm{img}}{\mathrm{img}}}
+\newcommand{\ltwo}{\ell^2}
+\newcommand{\levelspaceing}{\epsilon}
+\renewcommand{\H}{H}
+\newcommand{\Basis}{\mathds{B}}
+\newcommand{\CH}{\mathscr{H}}
+\newcommand{\rhog}{g}
+\newcommand{\rhomc}{{\sqcap}}
+%\newcommand{\rhomc}{\mu}
+\newcommand{\muhaar}{\mu_{\mathrm{Haar}}}
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\muC}{\mu_C}
+\newcommand{\animalc}{\alpha}
+\newcommand{\Vset}{\mathcal{V}}
+\newcommand{\Eset}{\mathcal{E}}
+\newcommand{\bra}[1]{\langle #1|}
+\newcommand{\ket}[1]{|#1\rangle}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\ketbra}[2]{\ket{#1}\!\bra{#2}}
+\newcommand{\ex}[2]{\langle #1 \rangle_{#2}}
+\newcommand{\abs}[1]{|{#1}|}
+\newcommand{\norm}[2][]{
+  \ifthenelse{\equal{#1}{}}
+    {\left\| {#2} \right\|}
+    {\ifthenelse{\equal{#1}{uinv}}
+      {\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert {#2} \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}
+      {\left\| {#2} \right\|_{#1}}
+    }
+}
+\newcommand{\notimplies}{\centernot\implies}
+\newcommand{\notimpliedby}{\centernot\impliedby}
+\newcommand{\notiff}{\centernot\iff}
+\newcommand{\taverage}[2][]{
+  \ifthenelse{\equal{#1}{}}
+  {\overline{#2}}
+  {\overline{#2}^{#1}}
+}
+\newcommand{\eqcoef}{C_{\mathrm{eq}}}
+\newcommand{\deff}{d^{\mathrm{eff}}}
+\newcommand{\tracedistance}[3][]{
+  \ifthenelse{\equal{#2}{}}
+  {\ifthenelse{\equal{#3}{}}
+    {\mathcal{D}_{#1}}{}
+  }{
+    \ifthenelse{\equal{#1}{}}
+    {\mathchoice{\operatorname{\mathcal{D}}\left(#2,#3\right)}{\operatorname{\mathcal{D}}(#2,#3)}{\operatorname{\mathcal{D}}(#2,#3)}{\operatorname{\mathcal{D}}(#2,#3)}}
+    {\mathchoice{\operatorname{\mathcal{D}}_{#1}\left(#2,#3\right)}{\operatorname{\mathcal{D}}_{#1}(#2,#3)}{\operatorname{\mathcal{D}}_{#1}(#2,#3)}{\operatorname{\mathcal{D}}_{#1}(#2,#3)}}
+  }
+}
+\newcommand{\fidelity}[3][]{
+  \ifthenelse{\equal{#2}{}}
+  {\ifthenelse{\equal{#3}{}}
+    {\mathcal{F}_{#1}}{}
+  }{
+    \ifthenelse{\equal{#1}{}}
+    {\mathchoice{\operatorname{\mathcal{F}}\left(#2,#3\right)}{\operatorname{\mathcal{F}}(#2,#3)}{\operatorname{\mathcal{F}}(#2,#3)}{\operatorname{\mathcal{F}}(#2,#3)}}
+    {\mathchoice{\operatorname{\mathcal{F}}_{#1}\left(#2,#3\right)}{\operatorname{\mathcal{F}}_{#1}(#2,#3)}{\operatorname{\mathcal{F}}_{#1}(#2,#3)}{\operatorname{\mathcal{F}}_{#1}(#2,#3)}}
+  }
+}
+\DeclareMathOperator{\geometricentanglement}{E}
+\DeclareMathOperator{\landauO}{O}
+\DeclareMathOperator{\landauOmega}{\omega}
+\DeclareMathOperator{\landauTheta}{\Theta}
+\DeclareMathOperator*{\probability}{\mathbb{P}}
+\DeclareMathOperator*{\expectation}{\mathbb{E}}
+%\DeclareMathOperator{\boundary}{\partial}
+%\DeclareMathOperator{\lspan}{span}
+\DeclareMathOperator*{\maxprime}{\mathrm{max}^\prime}
+%\DeclareMathOperator{\arg}{arg}
+
+% \newcommand{\rhomc}[3][]{
+%   \ifthenelse{\equal{#1}{}}
+%     {\sqcap_{[#2,#2+#3]}}
+%     {\sqcap_{[#2,#2+#3]}[#1]}
+% }
+\newcommand{\Sr}[3][]{
+  \ifthenelse{\equal{#1}{}}
+    {\operatorname{\mathnormal{S}}(#2\|#3)}
+    {\operatorname{\mathnormal{S}}_{#1}(#2\|#3)}
+}
+\newcommand{\dd}[1]{\mathop{\mathrm{d}#1}}
+\newcommand{\del}{\mathop{}\!\partial}
+\newcommand{\ddel}{\mathop{}\!d}
+\newcommand{\ad}{^\dagger}
+\newcommand{\compl}[1]{{{#1}^c}}
+\newcommand{\trunc}[2]{{#1}_{\upharpoonright \mathnormal{#2}}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+%\newcommand{\e}{\mathrm{e}}
+\newcommand{\iu}{\mathrm{i}}
+\DeclareMathOperator{\1}{\mathds{1}}
+\DeclareMathOperator{\id}{\mathrm{id}}
+\newcommand{\POVMs}{\mathcal{M}}
+\DeclareMathOperator{\Bop}{\mathcal{B}}
+\DeclareMathOperator{\Tcl}{\mathcal{T}}
+\DeclareMathOperator{\Obs}{\mathcal{O}}
+\DeclareMathOperator{\Qst}{\mathcal{S}}
+\DeclareMathOperator{\Cst}{\mathscr{S}}
+\DeclareMathOperator{\Qch}{\mathcal{T^+}}
+\DeclareMathOperator{\Chann}{\mathnormal{C}}
+\DeclareMathOperator{\Svn}{\mathnormal{S}}
+%\DeclareMathOperator{\Powerset}{\mathcal{P}}
+%\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Sym}{Sym}
+%\DeclareMathOperator{\Tr}{Tr} 
+\DeclareMathOperator{\Perm}{Perm}
+\DeclareMathOperator{\Erfc}{Erfc}
+\DeclareMathOperator{\Erf}{Erf}
+\DeclareMathOperator{\Poly}{Poly}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\dist}{d}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\spec}{spec}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\sgn}{sgn}
+
+% mathcal
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\mcA}{\mc{A}}
+\newcommand{\mcH}{\mc{H}}
+\newcommand{\mcS}{\mc{S}}
+\newcommand{\mcP}{\mc{P}}
+\newcommand{\mcQ}{\mc{Q}}
+\newcommand{\mcD}{\mc{D}}
+\newcommand{\mcG}{\mc{G}}
+\newcommand{\mcC}{\mc{C}}
+\makeatletter
+\newenvironment{sesac}{%
+  \let\@ifnextchar\new@ifnextchar
+  \left.%
+  \def\arraystretch{1.2}%
+  % One might prefer alignments other than left, 
+  % depending on the use to which it is put:
+  \array{@{}l@{\quad}l@{}}%
+}{\endarray\right\}}
+\makeatother
+
+% mathbb
+\newcommand{\mb}[1]{\mathbb{#1}}
+\newcommand{\N}{\mb{N}}
+\newcommand{\Z}{\mb{Z}}
+\newcommand{\R}{\mb{R}}
+\newcommand{\C}{\mb{C}} %\C seems to be defined by the russian babel package
+\newcommand{\one}{\mb{I}}
+\newcommand{\tr}{{\rm tr}}
+
+\newcommand{\dime}{\delta}
+%\newcommand{\localdim}{d}
+
+\newcommand{\Gap}{\Delta}
+\newcommand{\GapParent}{\Delta_*} %{\Delta\mkern-2mu^*}
+\newcommand{\DimPhysical}{d}
+\newcommand{\DimVirtual}{D}
+\newcommand{\DimSpatial}{\mathsf{d}}
+\newcommand{\ErrorObservableTrueGSToPEPS}{\epsilon}
+\newcommand{\ErrorObservablePEPSToPatch}{\varepsilon}
+\newcommand{\ErrorTraceDistanceTrueGSToPEPS}{{\epsilon}}
+
+%\DeclareMathOperator*{\E}{\mathbb{E}}
+
+% colors
+
+\definecolor{jens}{rgb}{0.1,0.5,0.1}
+\definecolor{martin}{rgb}{0,0,1.0}
+\newcommand{\je}[1]{{\color{cyan} #1}}
+\newcommand{\cw}[1]{{\color{martin} #1}}
+\newcommand{\ob}[1]{\textcolor{orange}{#1}}
+
+\newcommand{\sharpp}{{$\mathsf{\#P}$}}
+\newcommand{\pp}{{\sf PP}}
+\newcommand{\qma}{{\sf QMA}}
+\newcommand{\postbqp}{{\sf PostBQP}}
+
+\newcommand{\beq}[0]{\begin{equation}}
+\newcommand{\eeq}[0]{\end{equation}}
+\newcommand{\poly}{\mathrm{poly}}
+\newcommand{\hide}[1]{}
+
+
+\begin{document}
+
+
+
+
+\title{A mesoscopic platform for Hamiltonian gadgets}
+
+\author{C. Wille}
+\affiliation{Dahlem Center for Complex Quantum Systems, Freie Universit\"at Berlin, D-14195 Berlin, Germany}
+
+\author{R. Egger}
+\affiliation{Institut f\"ur Theoretische Physik, Heinrich-Heine-Universit\"at, D-40225 D\"usseldorf, Germany}
+
+\author{J. Eisert}
+\affiliation{Dahlem Center for Complex Quantum Systems, Freie Universit\"at Berlin, D-14195 Berlin, Germany}
+
+\author{A. Altland}
+\affiliation{Institut f\"ur Theoretische Physik, Universit\"at zu K\"oln, Z\"ulpicher Str.~77, D-50937 K\"oln, Germany}
+\begin{abstract}
+This talk submission is based on \href{https://arxiv.org/abs/1808.04529}{arXiv: 1808.04529}.
+\end{abstract}
+\maketitle
+
+\textbf{Result.} We construct realistic models that possess topological order from coupled Majorana box qubits in a systematic fashion that relies on Hamiltonian gadgets and the tensor network description of topological ground states. 
+
+\textbf{Summary}
+We extend the ideas of Ref. \cite{Terhal} that presents a specific 2D network of Majorana fermions with a low energy effective Hamiltonian that has toric code order and ask how more complex topologically ordered systems whose fix point Hamiltonians generically feature 12-local terms can be realized. To answer this, we proceed in four steps. \begin{enumerate}
+\item We develop a straight forward and concise characterization of the effective low energy theory of arbitrary networks in terms of local Hamiltonians whose degees of freedoms are qubits.
+\item As in \cite{Terhal} this effective theory is obtained via Schrieffer-Wolff transformations \cite{BRAVYI20112793}. As a consequence the local Hamiltonian terms in the effective theory are exponentially suppressed with increasing interaction range. This limits the ability to design effective theories with locality beyond 2-local terms. 
+Thus, in a second step we present two distinct design mechanisms to suppress specific terms in the Hamiltonian to overcome this limitation as much as possible. 
+\item We design small well-controlled network structures that can be used as building blocks to construct more complex effective theories. In particular, the effective theories of the local structures yield matrix product operators of bond dimension 2, repetition code stabilizers and Bell pair projectors. 
+\item We now turn to Hamiltonian gadget ideas as introduced by \cite{Kempe-SIAM-2006}.
+Specifically, we exploit the fact that topologically ordered systems can be represented as parent Hamiltonians of MPO-isometric PEPS \cite{Bultinck2017} and explicitly follow a construction by \cite{Brell2014PEPS} where perturbative PEPS parent Hamiltonians are constructed as the effective low energy theory. These gadget Hamiltonians are much simpler than the 12-local fix-point Hamiltonians with local terms being matrix product operators acting on short 1D rings and Bell pair projections and seem to be tailored to be constructed from combining the local network structures developed previously. For the double semion model, which is 12-local and therefore much more harder to realize than the toric code, we show that the perturbative PEPS parent can indeed be obtained in this fashion.
+\end{enumerate}  
+
+
+\bibliography{ref.bib}
+
+\end{document}
