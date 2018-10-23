@@ -235,10 +235,11 @@
 
 \title{Simulating topological tensor networks with Majorana qubits} 
 
-\author{C. Wille,$^1$ R. Egger,$^2$ J. Eisert,$^1$ and A. Altland$^3$}
-\affiliation{${}^1$~Dahlem Center for Complex Quantum Systems, Freie Universit\"at Berlin, D-14195 Berlin, Germany,\\
+\author{C. Wille,$^1$ R. Egger,$^2$ J. Eisert,$^{1,3}$ and A. Altland$^4$}
+\affiliation{${}^1$~Dahlem Center for Complex Quantum Systems, Physics Department, Freie Universit\"at Berlin, D-14195 Berlin, Germany,\\
 ${}^2$~Institut f\"ur Theoretische Physik, Heinrich-Heine-Universit\"at, D-40225 D\"usseldorf, Germany\\
-${}^3$~Institut f\"ur Theoretische Physik, Universit\"at zu K\"oln, Z\"ulpicher Str.~77, D-50937 K\"oln, Germany}
+${}^3$~Department of Mathematics and Computer Science, Freie Universit\"at Berlin, D-14195 Berlin, Germany,\\
+${}^4$~Institut f\"ur Theoretische Physik, Universit\"at zu K\"oln, Z\"ulpicher Str.~77, D-50937 K\"oln, Germany}
 
 \begin{abstract}
 The realization of topological quantum phases of matter remains a key challenge to condensed matter physics and quantum information science. In this work, we  demonstrate that progress in this direction can be made by combining concepts of tensor network theory with Majorana device technology. Considering the topological double semion string-net phase as an example, we exploit the fact that the representation of topological phases by tensor networks can be significantly simpler than their description by lattice Hamiltonians. The building blocks defining the tensor network are tailored to realization via simple units of capacitively coupled Majorana bound states. In the case under consideration,  this defines a remarkably simple blueprint of a synthetic double semion string-net, and one may be optimistic that the required device technology will be available soon.  Our results indicate that the implementation of  tensor network structures via mesoscopic quantum devices may define a powerful novel avenue to the realization of synthetic topological quantum matter in general.
@@ -295,7 +296,7 @@ A single MCB can be conceptualized as a system of mesoscopic size, $i$ labelling
 harboring an even number $2n$ of spatially localized Majorana bound states (MBSs). The latter correspond to 
 Majorana operators $\gamma_{i,a}=\gamma^\dagger_{i,a}$ with $a=1,\dots,2n$ and  the anticommutator algebra 
 \begin{equation}
-\{ \gamma_{i,a},\gamma_{j,b}\}=2\delta_{ij}\delta_{ab}\; . 
+\{ \gamma_{i,a},\gamma_{j,b}\}=2\delta_{i,j}\delta_{a,b}\; . 
 \end{equation}
 For recent reviews of MBS physics, see Refs.~\cite{Alicea2012,Leijnse2012,Beenakker2013,Sarma2015,Aguado2017,Lutchyn2018}.  
 The upper panel in Fig.~\ref{fig:MCBHardware} shows examples with $n=2$ and $n=3$, called \emph{tetron} and \emph{hexon} \cite{Karzig2017}, respectively.   The $2^n$-dimensional Hilbert space representing each box is split into two $2^{n-1}$-dimensional subspaces identified by the eigenvalues of the fermion number parity operator,
@@ -1019,7 +1020,8 @@ We are confident that our work will also stimulate research along this direction
 
 \begin{acknowledgements}
 We warmly thank A.\ Bauer for various helpful discussions and acknowledge funding by the DFG (CRC TR 183 within project C4 and EI 519/7-1),
-the Studienstiftung des Deutschen Volkes, and the ERC (TAQ). 
+the Studienstiftung des Deutschen Volkes, and the ERC (TAQ). This work has also received funding from the European Union's Horizon 2020 research and innovation 
+programme under grant agreement No 817482 (PASQUANS). 
 
 \emph{Note added:}  During the writing of this manuscript, we became aware of two  interesting preprints
 \cite{Sagi2018,Thomson2018}  suggesting the application of  MCB networks  to the quantum simulation 
