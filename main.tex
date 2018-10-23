@@ -242,7 +242,8 @@ ${}^3$~Department of Mathematics and Computer Science, Freie Universit\"at Berli
 ${}^4$~Institut f\"ur Theoretische Physik, Universit\"at zu K\"oln, Z\"ulpicher Str.~77, D-50937 K\"oln, Germany}
 
 \begin{abstract}
-The realization of topological quantum phases of matter remains a key challenge to condensed matter physics and quantum information science. In this work, we  demonstrate that progress in this direction can be made by combining concepts of tensor network theory with Majorana device technology. Considering the topological double semion string-net phase as an example, we exploit the fact that the representation of topological phases by tensor networks can be significantly simpler than their description by lattice Hamiltonians. The building blocks defining the tensor network are tailored to realization via simple units of capacitively coupled Majorana bound states. In the case under consideration,  this defines a remarkably simple blueprint of a synthetic double semion string-net, and one may be optimistic that the required device technology will be available soon.  Our results indicate that the implementation of  tensor network structures via mesoscopic quantum devices may define a powerful novel avenue to the realization of synthetic topological quantum matter in general.
+The realization of topological quantum phases of matter remains a key challenge to condensed matter physics and quantum information science. In this work, we  demonstrate that progress in this direction can be made by combining concepts of tensor network theory with Majorana device technology. Considering the topological double semion string-net phase as an example, we exploit the fact that the representation of topological phases by tensor networks can be significantly simpler than their description by lattice Hamiltonians. The building blocks defining the tensor network are tailored to realization via simple units of capacitively coupled Majorana bound states. In the case under consideration,  this defines a remarkably simple blueprint of a synthetic double semion string-net, a model with applications in quantum error correction,
+and one may be optimistic that the required device technology will be available soon.  Our results indicate that the implementation of  tensor network structures via mesoscopic quantum devices may define a powerful novel avenue to the realization of synthetic topological quantum matter in general.
 \end{abstract}
 \maketitle
 
@@ -267,7 +268,10 @@ Secondly, we propose the realization of these two-dimensional (2D) structures in
 
 Tensor networks provide a very natural environment for the description of topological matter, and in particular for string\nobreakdash -nets. In fact, the fusion rules of topological quasi-particles find a mathematical abstraction in tensor categories,  whose representation in  the language of string-nets represents a tensor network almost by design. The formulation of a tensor network involves a   'physical' and a 'virtual' space, where the former represents physical  degrees of freedom (spins on a lattice, etc.) and the second serves to generate entanglement and capture the correlation structure of the state.  While the representation of string-net ground states as tensor networks is relatively straightforward~\cite{Gu2009,Buerschaper2009}, a drastic simplification emerges from the idea~\cite{Schuch_MPS,1409.2150,FermionicMPO,PhysRevB.95.245127} to inject, or encode, the physical space into the larger space of virtual states. In exchange for the seeming redundancy of this encoding, one gains a much simpler local description in terms of an effective Hamiltonian \cite{Brell2014PEPS} based on Hamiltonian gadget ideas \cite{Kempe-SIAM-2006, PhysRevA.77.062329}. At least, it is simple enough to afford a direct realization in quantum devices.
 
-To demonstrate the functioning of the approach introduced, we will illustrate this principle on the case of the double semion string-net \cite{Levin2005}. This system comes next in complexity to the elementary toric code. It  is not yet universal for quantum computing  but already requires the full-feathered machinery of 12-spin correlations on the Hamiltonian level\footnote{Note that for the double semion model, there is mapping from a Hamiltonian with 12-local to 6-local plaquette operators. However, the 6-local operators are more complex (they are no longer  product operators), and therefore no straightforward way to implement the Hamiltonian in  MCB networks exists.}.  By passing from physical to virtual space, this complexity gets reduced to a relatively mundane six-spin ring exchange, similar to that, e.g.,   defining the physical qubits of a toric code on a hexagonal lattice \cite{Vijay2015}.  It is then natural to define the hardware realization of the system with direct reference to the virtual space of the tensor network. To this end, various standard elements of tensor network constructions, e.g.,  Bell state projections, one-dimensional (1D) matrix product operators (MPOs), or repetition code qubits, all need to be implemented on the device level. A principal observation of this work is that networks of tunnel-coupled low capacitance quantum dots harboring Majorana bound states  --- Majorana Cooper boxes (MCBs) in the jargon of the field \cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017} --- are optimally suited to this task. 
+To demonstrate the functioning of the approach introduced, we will illustrate this principle on the case of the double semion string-net \cite{Levin2005}. This system comes next in complexity to the elementary toric code. It has recently been identified as a model allowing for quantum error correction
+with topological codes that fits into the stabilizer formalism, but which is interestingly not of CSS type
+\cite{SemionErrorCorrection}. 
+It  is not yet universal for quantum computing  but already requires the full-feathered machinery of 12-spin correlations on the Hamiltonian level \footnote{Note that for the double semion model, there is mapping from a Hamiltonian with 12-local to 6-local plaquette operators. However, the 6-local operators are more complex (they are no longer  product operators), and therefore no straightforward way to implement the Hamiltonian in  MCB networks exists.}.  By passing from physical to virtual space, this complexity gets reduced to a relatively mundane six-spin ring exchange, similar to that, e.g.,   defining the physical qubits of a toric code on a hexagonal lattice \cite{Vijay2015}.  It is then natural to define the hardware realization of the system with direct reference to the virtual space of the tensor network. To this end, various standard elements of tensor network constructions, e.g.,  Bell state projections, one-dimensional (1D) matrix product operators (MPOs), or repetition code qubits, all need to be implemented on the device level. A principal observation of this work is that networks of tunnel-coupled low capacitance quantum dots harboring Majorana bound states  --- Majorana Cooper boxes (MCBs) in the jargon of the field \cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017} --- are optimally suited to this task. 
 
 While this may be true also for more general tensor networks, it certainly is the case for the projected entangled pair state required in our present application.  For a preliminary impression of the hardware setup required to realize a double semion string-net, see Fig.~\ref{fig:DS} below, where the boxes represent MCBs, red and blue lines are tunneling bridges (short quantum wires), and the triangles are mere guides to the eye. (Not shown in the figure are side gates next to the tunneling links required to run a one-time calibration procedure, likewise required in the realization of, e.g., a Majorana surface code 
 \cite{PhysRevLett.116.050501,PhysRevB.94.174514,PhysRevLett.108.260504,PhysRevX.6.031016,Hoffman16,Roy2017}.) We emphasize that the structure does not include elements truly adverse to present-date experimental realization. Specifically, their operation does not require magnetic field interferometry or time varying external voltage sources. The structures rather are static in that the ground state of the tunnel- and capacitively coupled network is the double semion state. AC operations may be required to create anyonic excitations in the system or for the measurement of local state characteristics. However, these are operations beyond the scope of the current text. 
@@ -280,7 +284,7 @@ are well known and for which they have originally been suggested \cite{DMRGWhite
 a-posteriori approach of capturing complex phases of matter in a mathematically precise and conceptually clear
 fashion \cite{TopologicalOrderInPEPS,PEPSTopology,ClassificationPhases,PhysRevB.81.064439,PhysRevB.95.245127,FermionicMPO,1409.2150}. 
 Instead, they here serve as immediate candidates for a solid-state device realization. 
-The double semion system is ideally suited to illustrate the principle because in spite of its relative simplicity, a 'direct' realization in quantum matter and/or hardware constructions seems illusive in view of the required 12-spin correlations\cite{Note1}.The essential insight which brings the system into reach is that its encoding in the virtual space of a tensor network dramatically reduces the complexity required from the hardware. While the generalization to branching string configurations on a lattice is straightforward, the realization of a tensor structure reliably describing a universal phase (such as the double Fibonacci phase) remains a nontrivial task. However, we hope that the concepts and device building blocks introduced below will be instrumental to progress in this direction as well. 
+The double semion system is ideally suited to illustrate the principle because in spite of its relative simplicity, a 'direct' realization in quantum matter and/or hardware constructions seems illusive in view of the required 12-spin correlations \cite{Note1}.The essential insight which brings the system into reach is that its encoding in the virtual space of a tensor network dramatically reduces the complexity required from the hardware. While the generalization to branching string configurations on a lattice is straightforward, the realization of a tensor structure reliably describing a universal phase (such as the double Fibonacci phase) remains a nontrivial task. However, we hope that the concepts and device building blocks introduced below will be instrumental to progress in this direction as well. 
  
 The remainder of this work is structured as follows. In Sec.~\ref{sec2}, we discuss the low-energy theory for arbitrary MCB networks.  In particular, we introduce novel design principles based on destructive interference mechanisms, see Sec.~\ref{sec2d}, which are key to the constructions put forward below.  In Sec.~\ref{sec3}, we show that high-order qubit interactions can be engineered in simple MCB networks based on these design principles.  In particular, for 1D structures of coupled MCBs, we establish a link to MPOs and other key elements of tensor network states.  Next, after a general discussion of string-nets (in particular, of the double semion system) and their representation in terms of tensor networks in~Secs.~\ref{sec4a} and \ref{sec4b}, we present the MCB network realization for the ground state of the double semion model in Sec.~\ref{sec4c}.  This work concludes with an outlook in Sec.~\ref{sec5}. Technical details 
 related to Sec.~\ref{sec4c} can be found in the Appendix.
@@ -526,7 +530,14 @@ We next outline  how the  design principles of Sec.~\ref{sec2e} may be applied t
 In order to design 2D topological models, we have to formulate new
 design principles to make sure that we arrive at models that are in the anticipated phase. We do so by building upon the 
 framework of Hamiltonian gadgets 
-\cite{Kempe-SIAM-2006,PhysRevA.77.062329,Brell2014PEPS,Bartlett06}, as will be explained below. 
+\cite{Kempe-SIAM-2006,PhysRevA.77.062329,Brell2014PEPS,Bartlett06}. Hamiltonian gadgets
+are tools generating Hamiltonian terms with a higher locality in certain orders of perturbation theory. Introduced
+in Ref.\ \cite{Kempe-SIAM-2006} as a method to generate three-body terms, the has been generalized in Ref.\
+\cite{PhysRevA.77.062329} to provide perturbative gadgets at arbitrary orders. In this work, Hamiltonian gadgets are used in a 
+specific flavor, in that suitable orders of perturbation theory are made use of to generate PEPS from basic building blocks
+\cite{Brell2014PEPS,Bartlett06}. We will see that it is this kind of Hamiltonian gadget that allows for engineering 
+the anticipated topological fixed point models from mesoscopic building blocks.
+
 
 As an intermediate step, we 
 identify design principles for constructing multi-qubit operators. In Sec.\ \ref{sec4}, these 1D
@@ -868,12 +879,12 @@ where  $v$ runs over the vertices and $e$ over the edges of the underlying latti
 
 Regarding a hardware design realizing a topological ground state our problem is thus reduced to that of understanding the local action of $\hat A^+ \hat A$ and obtaining a good hardware representation of these operators locally. For the concrete case of the double semion model, the $A$ tensor as defined by Eq.~\eqref{eq:ATensorLWS} is given by
 \begin{equation}
-\hat A = \sum_{abc} \ket{a \oplus  b, b \oplus  c, c \oplus  a} A_{abc} \bra{a,a,b,b,c,c}\;,
+\hat A = \sum_{a,b,c} \ket{a \oplus  b, b \oplus  c, c \oplus  a} A_{abc} \bra{a,a,b,b,c,c}\;,
 \end{equation}
 where the addition modulo two, $\oplus$, determines physical indices as required by Eq.~\eqref{eq:ATensorLWS}, $i=a\oplus b$, and so on. 
 In this case, the pseudo-inverse has a particularly simple form, $\hat A^+=\frac12 \hat A^\dagger$, where an explicit representation is given by
  \begin{equation}\label{eq:pseudoinv}
-\hat A^+= \frac{1}{2}\sum_{ija} \ket{a, a, a \oplus i , a \oplus i, a \oplus j, a \oplus j } A^\ast_{a(a\oplus i)(a\oplus j)} \bra{j,i\oplus j,i} \;.
+\hat A^+= \frac{1}{2}\sum_{i,j,a} \ket{a, a, a \oplus i , a \oplus i, a \oplus j, a \oplus j } A^\ast_{a(a\oplus i)(a\oplus j)} \bra{j,i\oplus j,i} \;.
 \end{equation}
 Equation  \eqref{eq:pseudoinv} 
  states that the pseudo-inverse will map a general physical state of the system, $\ket{j,i\oplus j,i}$, back to a superposition of virtual states subject to the condition that they (i) have pairwise even parity at the corners and (ii) the parity between states at different corners is determined by the physical state of their edge. This leaves  only one free summation index, $a$, while all others are fixed as indicated. 
@@ -888,7 +899,7 @@ projects from the $2^6$-dimensional space $\otimes^6 V$ of general states, $\ket
 pairwise even-parity states $\simeq \otimes^3 V$. 
 The second operator,
 \begin{align}
-\hat X=\sum_{abc} &\ket{a\oplus 1,a\oplus 1,b\oplus 1,b\oplus 1,c\oplus 1,c \oplus 1} X_{abc} \nonumber \\ &\bra{a,a,b,b,c,c}
+\hat X=\sum_{a,b,c} &\ket{a\oplus 1,a\oplus 1,b\oplus 1,b\oplus 1,c\oplus 1,c \oplus 1} X_{abc} \nonumber \\ &\bra{a,a,b,b,c,c}
 \label{eq:xdef}
 \end{align}
 likewise acts in $\otimes^3V$ where it flips all states and assigns a sign factor 
@@ -898,7 +909,7 @@ X_{abc} = \begin{cases} -1\;, \qquad & a+b+c=1,2\;, \\ 1\;, \qquad  &\text{other
 \end{equation}
 The operator $\hat X$ in Eq.~\eqref{eq:xdef} can alternatively be represented as MPO with bond dimension $D=2$,
 \begin{equation}\label{eq:xdef2}
-\hat X = - \frac{1}{32} \sum_{ijk} \hat A_{ij} \otimes \hat A_{jk} \otimes \hat A_{ki}\;,
+\hat X = - \frac{1}{32} \sum_{i,j,k} \hat A_{ij} \otimes \hat A_{jk} \otimes \hat A_{ki}\;,
 \end{equation}
 where individual factors, 
 \begin{align}\nonumber
