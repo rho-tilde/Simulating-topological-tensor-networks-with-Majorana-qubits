@@ -19,6 +19,7 @@
 \newcommand{\cancel}[1]{}
 \usepackage{comment}
 
+
 \usepackage[table,usenames,dvipsnames]{xcolor}
 \usepackage[colorlinks=true,
 			hypertexnames=false
@@ -253,13 +254,18 @@ and one may be optimistic that the required device technology will be available 
 How can complex, or even topological, states of matter be realized in a physical system under precisely controlled conditions? Both from a conceptual and an applied perspective this is one of the most pressing questions of contemporary physics. Much of the dramatic recent progress in the  theory of quantum matter is owed to the identification of a vast spectrum of candidate topological phases of matter. At the same time, only few of these phases have been seen in experiment. Except for the quantum Hall states, and perhaps a few systems promising to harbor $\mathbb{Z}_2$-gauge symmetries, long range entangled topological phases of matter remain elusive at this point \cite{qc3,Wen2017}. This is an unfortunate situation, not only from a condensed matter point of view: Conventional approaches to universal quantum computation based on surface codes \cite{TopologicalQuantumMemory} require  enormous overheads in magic state distillation \cite{PhysRevA.71.022316}, which may well turn out to be impractical. By contrast, the excitations supported by topological phases of matter have much stronger computational potential \cite{Kitaev-AnnPhys-2003,qc3,RevModPhys.87.307} and would arguably define a faster pathway, if only they could be realized.   
 
 The apparent gap between theoretical understanding and the reality of materials is best illustrated by the concept of string-nets. Proposed more than a decade ago as a theoretical paradigm perhaps large enough to include all (non-chiral gapped bosonic) topological quantum phases \cite{Levin2005,LevinWen,Wen2017}, they generically contain carefully balanced 12-spin interactions. No real life material will deliver such type of effective interactions out of the box. The standard way of reading the situation is to consider the string-net Hamiltonians as effective fixed points inside their topological phases. However, from a pragmatic perspective this only sidesteps the problem, and the identification of the respective basins of attraction in relation to existing quantum matter remains a daunting challenge. 
+%
+There are two principal approaches to make progress in this situation. The first aims to identify quantum matter in a prospected topological phase without direct reference to the representing string-net fixed point. As indicated above, progress in this direction has been rather limited so far.
+The second aims to engineer synthetic string-nets, or better to say simulators of string-nets, from well controlled device building blocks, in the
+mindset of a \emph{quantum simulation} \cite{CiracZollerSimulation,Roadmap}, 
+together with versatile design principles that allow one to devise complex models from these building blocks. We find that mesoscopic systems are singled out as a type of physical system providing a platform for such quantum simulations. In no other architecture known to date for quantum simulations it is conceivable to precisely engineer sophisticated 12-spin Hamiltonian interaction terms. Notably, in cold atoms in optical lattices
+\cite{BlochSimulation}, 
+the presumably most
+developed platform for quantum simulators to date,
+one commonly encounters 2-local interactions, usually in a highly constrained fashion.
+We hence establish mesoscopic systems as a novel  and highly promising platform for quantum simulations beyond simple Hamiltonian models with nearest-neighbor interactions.
 
-There are two principal approaches to make progress in this situation. The first aims to identify quantum matter in a prospected topological phase without direct reference to the representing string-net fixed point. As indicated above, progress in this direction has been rather limited so far. The second aims to engineer synthetic string-nets, or better to say simulators of string-nets, from well controlled device building blocks, in the
-mindset of a quantum simulation \cite{CiracZollerSimulation,Roadmap}, 
-together with versatile design principles that allow one to devise complex models from these building blocks.  
-
-The present work reports significant progress with respect to the second category. 
-More specifically, our approach is based on the combination of two design principles: Firstly, we present a new application of
+Thus, the present work reports significant progress with respect to the second category. More specifically, our approach is based on the combination of two design principles: Firstly, we present a new application of
  tensor network theory \cite{Orus-AnnPhys-2014,AreaReview,VerstraeteBig,SchuchReview}.
  Tensor networks are known to describe string-nets in ways drastically reduced in complexity compared to the native Hamiltonian. Here,
   this insight is applied to provide
@@ -339,7 +345,7 @@ Our approach will be based on perturbation theory in the parameters $|\lambda_{i
 $\hat H=\hat  H_0 +  \hat H_t$,
 where $\hat H_0=E_C \sum_i (\hat N_i-n_{g,i})^2$ includes the charging Hamiltonians of all MCBs and $\hat H_t$ contains the tunnel couplings connecting different MCBs,
 \begin{equation}\label{eq:V}
- \hat H_t=\sum_{ij,ab} \lambda_{ij,ab} \gamma_{i,a} \gamma_{j,b} e^{\mathrm i(\hat \varphi_i - \hat \varphi_j)} +\mathrm{h.c.}\;.
+ \hat H_t=\sum_{i,j,a,b} \lambda_{ij,ab} \gamma_{i,a} \gamma_{j,b} e^{\mathrm i(\hat \varphi_i - \hat \varphi_j)} +\mathrm{h.c.}\;.
 \end{equation}
 These operators describe the inter-MCB correlation of Majorana bilinears $\gamma_{i,a} \gamma_{j,b}$ via the tunneling amplitudes $\lambda_{ij,ab}$, where  $e^{\mathrm i(\hat \varphi_i - \hat \varphi_j)}$ accounts for the fact that charge is raised/lowered by one unit on MCB $i/j$. Note that the action of $\hat H_t$ on the 
 $\hat H_0$ charge ground state generates an excited state. The task of the perturbative program outlined above is the identification of relevant virtual ring-exchange processes wherein multiple tunneling leads back to the ground state.
@@ -368,7 +374,10 @@ parity constraint in Eq.~\eqref{eq:ParityOperator}, which for hexons is equivale
 
 \subsection{Effective low-energy theory}\label{sec2d}
 
-For a general MCB network Hamiltonian, $\hat H=\hat H_0+\hat H_t$, 
+For a general MCB network Hamiltonian, 
+\begin{equation}
+\hat H=\hat H_0+\hat H_t,
+\end{equation}
 each tunneling process involves decharging (charging) the emitting (receiving) MCB by an elementary charge. Since the charging energy $E_C$ is assumed large compared to the tunneling amplitudes, and open tunneling paths inevitably leave the system in an excited state, only  
 \emph{closed paths} are physically relevant to the low-energy physics. In the following we show how Schrieffer-Wolff perturbation theory (taken in the standard self-energy approximation) \cite{Bravyi2011} may be applied to represent the relevant tunneling processes as products of Pauli operators acting on the low-energy Hilbert space of the system. 
 The starting point of Schrieffer-Wolff theory is the series expansion
@@ -456,7 +465,7 @@ from a simpler \emph{reduced graph} obtained by collapsing each MCB to a single 
 see Fig.~\ref{fig:ex2}(b,d) for examples.
 For convenience, vertices with overlapping $T_i$ operators are now marked by a different color (black in Fig.~\ref{fig:ex2}). If the reduced graph has a reflection symmetry, 
 mapping edges to edges and vertices to vertices of the same color, 
-every sequence $s$ is uniquely mapped onto a mirror sequence with the same energy product. (We  note that the charging energies of the individual MCBs need not be identical in order to guarantee invariance of the inverse energy product under the described reflection.  In fact, charging energies do not appear in our definition of a reduced graph.)  
+every sequence $s$ is uniquely mapped onto a mirror sequence with the same energy product. We note that the charging energies of the individual MCBs need not be identical in order to guarantee invariance of the inverse energy product under the described reflection.  In fact, charging energies do not appear in our definition of a reduced graph.  
 If the reflection symmetry also interchanges an odd number of overlapping $T_i$ pairs,
 this map defines a loop-canceling permutation $\Pi[s]$. 
 
@@ -508,7 +517,16 @@ In practice, the loop phase may be calibrated in an initial step by adjusting th
 value of $\phi_{\rm loop}$ in Eq.~\eqref{eq:cases} has been realized. We expect this calibration technique to be important when 
 building complex structures from elementary building blocks.
 
-Due to the finite precision of the calibration process and due to noise-induced phase fluctuations, the suppression of the above short loop terms may not be perfect. We can account for this fact by regarding the corresponding qubit operators as small perturbations to the effective Hamiltonian. If the unperturbed Hamiltonian is topologically ordered, the stability of the associated fixed point implies a finite phase fluctuation variance which can be tolerated.
+Due to the finite precision of the calibration process and due to noise-induced phase fluctuations, the suppression of the above short loop terms may not be perfect. We can account for this fact by regarding the corresponding qubit operators as small perturbations to the effective Hamiltonian. If the unperturbed effective Hamiltonian 
+$\hat H_{\rm eff}$ is topologically ordered, 
+%the stability of the associated fixed point implies a finite phase fluctuation variance %which can be tolerated.
+then the error terms $\hat V= \sum_{i} V_{i} $ arising from the imperfect calibration of the loop phases $\Delta \phi_i$ leading to
+\begin{equation}
+\hat H_{\rm eff}'= \hat H_{\rm eff} + \hat V 
+\end{equation}
+will satisfy the conditions of 
+Ref.~\cite{1001.0344} that show the stability of topological order under local
+perturbations, if $\|V_{i}\|$ is sufficiently small for all $i$. That is to say, our construction inherits the robustness of topological order established in Ref.~\cite{1001.0344}.
 
 \emph{Composite loop patterns ---}
 Finally, we investigate how the design mechanisms can be transferred to general closed paths. It is straightforward to show that the contribution associated to a disjoint union of loops factorizes into the product of the single loop operators up to a real positive proportionality constant (a combinatorial prefactor) and thus such contributions vanish if one of the loops vanishes. 
@@ -534,7 +552,7 @@ design principles to make sure that we arrive at models that are in the anticipa
 framework of Hamiltonian gadgets 
 \cite{Kempe-SIAM-2006,PhysRevA.77.062329,Brell2014PEPS,Bartlett06}. Hamiltonian gadgets
 are tools generating Hamiltonian terms with a higher locality in certain orders of perturbation theory. Introduced
-in Ref.\ \cite{Kempe-SIAM-2006} as a method to generate three-body terms, the has been generalized in Ref.\
+in Ref.\ \cite{Kempe-SIAM-2006} as a method to generate three-body terms, the idea has been generalized in Ref.\
 \cite{PhysRevA.77.062329} to provide perturbative gadgets at arbitrary orders. In this work, Hamiltonian gadgets are used in a 
 specific flavor, in that suitable orders of perturbation theory are made use of to generate PEPS from basic building blocks
 \cite{Brell2014PEPS,Bartlett06}. We will see that it is this kind of Hamiltonian gadget that allows for engineering 
@@ -976,7 +994,6 @@ with the so far freely adjustable coefficient $c_i:=  \beta_i a_i$. We finally n
 % \begin{equation} \label{eq:HDS2}
 % \hat H_{v} \simeq H_x^{(6)}=- \frac{252\lambda^6}{E_C^5} \hat X \;.
 % \end{equation}
-
 
 
 \emph{Bell pair bridges and double semion network ---}
