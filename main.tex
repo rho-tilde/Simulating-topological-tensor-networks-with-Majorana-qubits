@@ -243,50 +243,44 @@ ${}^3$~Department of Mathematics and Computer Science, Freie Universit\"at Berli
 ${}^4$~Institut f\"ur Theoretische Physik, Universit\"at zu K\"oln, Z\"ulpicher Str.~77, D-50937 K\"oln, Germany}
 
 \begin{abstract}
-The realization of topological quantum phases of matter remains a key challenge to condensed matter physics and quantum information science. In this work, we  demonstrate that progress in this direction can be made by combining concepts of tensor network theory with Majorana device technology. Considering the topological double semion string-net phase as an example, we exploit the fact that the representation of topological phases by tensor networks can be significantly simpler than their description by lattice Hamiltonians. The building blocks defining the tensor network are tailored to realization via simple units of capacitively coupled Majorana bound states. In the case under consideration,  this defines a remarkably simple blueprint of a synthetic double semion string-net,
-and one may be optimistic that the required device technology will be available soon.  Our results indicate that the implementation of  tensor network structures via mesoscopic quantum devices may define a powerful novel avenue to the realization of synthetic topological quantum matter in general.
+The realization of topological quantum phases of matter remains a key challenge to condensed matter physics and quantum information science. In this work, we  demonstrate that progress in this direction can be made by combining concepts of tensor network theory with Majorana device technology. Considering the topological double semion string-net phase as an example, we exploit the fact that the representation of topological phases by tensor networks can be significantly simpler than their description by lattice Hamiltonians. The building blocks defining the tensor network are tailored to realization via simple units of capacitively coupled Majorana bound states. In the case under consideration,  this \rein{yields} a remarkably simple blueprint of a synthetic double semion string-net,
+and one may be optimistic that the required device technology will be available soon.  Our results indicate that the implementation of  tensor network structures via mesoscopic quantum devices \rein{opens up a powerful novel avenue toward the realization and quantum simulation} of synthetic topological quantum matter.
 \end{abstract}
 \maketitle
 
 \section{Introduction}
 
-
 How can complex, or even topological, states of matter be realized in a physical system under precisely controlled conditions? Both from a conceptual and an applied perspective this is one of the most pressing questions of contemporary physics. Much of the dramatic recent progress in the  theory of quantum matter is owed to the identification of a vast spectrum of candidate topological phases of matter. At the same time, only few of these phases have been seen in experiment. Except for the quantum Hall states, and perhaps a few systems promising to harbor $\mathbb{Z}_2$-gauge symmetries, long range entangled topological phases of matter remain elusive at this point \cite{qc3,Wen2017}. This is an unfortunate situation, not only from a condensed matter point of view: Conventional approaches to universal quantum computation based on surface codes \cite{TopologicalQuantumMemory} require  enormous overheads in magic state distillation \cite{PhysRevA.71.022316}, which may well turn out to be impractical. By contrast, the excitations supported by topological phases of matter have much stronger computational potential \cite{Kitaev-AnnPhys-2003,qc3,RevModPhys.87.307} and would arguably define a faster pathway, if only they could be realized.   
 
-The apparent gap between theoretical understanding and the reality of materials is best illustrated by the concept of string-nets. Proposed more than a decade ago as a theoretical paradigm perhaps large enough to include all (non-chiral gapped bosonic) topological quantum phases \cite{Levin2005,LevinWen,Wen2017}, they generically contain carefully balanced 12-spin interactions. No real life material will deliver such type of effective interactions out of the box. The standard way of reading the situation is to consider the string-net Hamiltonians as effective fixed points inside their topological phases. However, from a pragmatic perspective this only sidesteps the problem, and the identification of the respective basins of attraction in relation to existing quantum matter remains a daunting challenge. 
-%
+The apparent gap between theoretical understanding and the reality of materials is best illustrated by the concept of string-nets. Proposed more than a decade ago as a theoretical paradigm perhaps large enough to include all \rein{non-chiral gapped bosonic phases of matter with topological  order} \cite{Levin2005,LevinWen,Wen2017}, they generically contain carefully balanced 12-spin interactions. No real life material will deliver such type of effective interactions out of the box. The standard way of reading the situation is to consider the string-net Hamiltonians as effective fixed points inside their topological phases. However, from a pragmatic perspective this only sidesteps the problem, and the identification of the respective basins of attraction in relation to existing quantum matter remains a daunting challenge. 
 There are two principal approaches to make progress in this situation. The first aims to identify quantum matter in a prospected topological phase without direct reference to the representing string-net fixed point. As indicated above, progress in this direction has been rather limited so far.
-The second aims to engineer synthetic string-nets, or better to say simulators of string-nets, from well controlled device building blocks, in the
-mindset of a \emph{quantum simulation} \cite{CiracZollerSimulation,Roadmap}, 
-together with versatile design principles that allow one to devise complex models from these building blocks. We find that mesoscopic systems are singled out as a type of physical system providing a platform for such quantum simulations. In no other architecture known to date for quantum simulations it is conceivable to precisely engineer sophisticated 12-spin Hamiltonian interaction terms. Notably, in cold atoms in optical lattices
-\cite{BlochSimulation}, 
-the presumably most
-developed platform for quantum simulators to date,
-one commonly encounters 2-local interactions, usually in a highly constrained fashion.
-We hence establish mesoscopic systems as a novel  and highly promising platform for quantum simulations beyond simple Hamiltonian models with nearest-neighbor interactions.
+The second aims to engineer, \rein{in the mindset of
+a \emph{quantum simulation}  \cite{CiracZollerSimulation,Roadmap},  synthetic string-nets from well controlled device building blocks, 
+together with versatile design principles that allow one to devise complex models from these building blocks. 
+We here identify a class of mesoscopic systems as unique platform for quantum simulations of string-net models. 
+So far, no alternative architecture has been conceived where, e.g., sophisticated 12-spin Hamiltonian interaction terms can be engineered in a precise manner. 
+In particular, in ultracold atom gases in optical lattices
+\cite{BlochSimulation} --- the presumably most developed platform for quantum simulators to date ---
+one commonly encounters (highly constrained) 2-local interactions.
+Below we propose a promising novel platform for quantum simulations beyond simple Hamiltonian models with nearest-neighbor interactions.}
 
-Thus, the present work reports significant progress with respect to the second category. More specifically, our approach is based on the combination of two design principles: Firstly, we present a new application of
- tensor network theory \cite{Orus-AnnPhys-2014,AreaReview,VerstraeteBig,SchuchReview}.
- Tensor networks are known to describe string-nets in ways drastically reduced in complexity compared to the native Hamiltonian. Here,
-  this insight is applied to provide
- a blueprint how phases of matter can be devised from basic building blocks.
-Secondly, we propose the realization of these two-dimensional (2D) structures in a hardware platform featuring Majorana bound states \cite{Alicea2012,Leijnse2012,Beenakker2013,Sarma2015,Aguado2017,Lutchyn2018,Mourik2012,Albrecht2016,Deng2016,Nichele2017,Gazi2017,Zhang2018}. Both directions are novel.  We emphasize right away that the Majorana qubit introduced in Refs.~\cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017} is essential for its unique capability in describing electronic and Pauli spin correlations. However, the hardware overhead required on top of the Majorana states is comparatively modest and does not go beyond that otherwise required to realize small-scale qubit networks. Our design is thus formulated in terms of device technology that is not yet available  but with a bit of optimism will be very soon \cite{Lutchyn2018}.
+Thus, the present work reports significant progress with respect to the second category. More specifically, our approach is based on the combination of two design principles: Firstly, we present a new application of tensor network theory \cite{Orus-AnnPhys-2014,AreaReview,VerstraeteBig,SchuchReview}. 
+Tensor networks are known to describe string-nets in ways drastically reduced in complexity compared to the native Hamiltonian. Here,  this insight is applied to provide
+ a blueprint how phases of matter can be devised from basic building blocks. Secondly, we propose the realization of these two-dimensional (2D) structures in a hardware platform featuring Majorana bound states \cite{Alicea2012,Leijnse2012,Beenakker2013,Sarma2015,Aguado2017,Lutchyn2018,Mourik2012,Albrecht2016,Deng2016,Nichele2017,Gazi2017,Zhang2018}. Both directions are novel.  We emphasize right away that the Majorana qubit introduced in Refs.~\cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017} is essential for its unique capability in describing electronic and Pauli spin correlations. However, the hardware overhead required on top of the Majorana states is comparatively modest and does not go beyond that otherwise required to realize small-scale qubit networks. Our design is thus formulated in terms of device technology that is not yet available  but with a bit of optimism will be very soon \cite{Lutchyn2018}.
 
-Tensor networks provide a very natural environment for the description of topological matter, and in particular for string\nobreakdash -nets. In fact, the fusion rules of topological quasi-particles find a mathematical abstraction in tensor categories,  whose representation in  the language of string-nets represents a tensor network almost by design. The formulation of a tensor network involves a   'physical' and a 'virtual' space, where the former represents physical  degrees of freedom (spins on a lattice, etc.) and the second serves to generate entanglement and capture the correlation structure of the state.  While the representation of string-net ground states as tensor networks is relatively straightforward~\cite{Gu2009,Buerschaper2009}, a drastic simplification emerges from the idea~\cite{Schuch_MPS,1409.2150,FermionicMPO,PhysRevB.95.245127} to inject, or encode, the physical space into the larger space of virtual states. In exchange for the seeming redundancy of this encoding, one gains a much simpler local description in terms of an effective Hamiltonian \cite{Brell2014PEPS} based on Hamiltonian gadget ideas \cite{Kempe-SIAM-2006, PhysRevA.77.062329}. At least, it is simple enough to afford a direct realization in quantum devices.
+Tensor networks provide a very natural environment for the description of topological matter, and in particular for string\nobreakdash -nets. In fact, the fusion rules of topological quasi-particles find a mathematical abstraction in tensor categories,  whose representation in  the language of string-nets represents a tensor network almost by design. The formulation of a tensor network involves a   'physical' and a 'virtual' space, where the former represents physical  degrees of freedom (spins on a lattice, etc.) and the second serves to generate entanglement and capture the correlation structure of the state.  While the representation of string-net ground states as tensor networks is relatively straightforward~\cite{Gu2009,Buerschaper2009}, a drastic simplification emerges from the idea~\cite{Schuch_MPS,1409.2150,FermionicMPO,PhysRevB.95.245127} to inject, or encode, the physical space into the larger space of virtual states. In exchange for the seeming redundancy of this encoding, one gains a much simpler local description in terms of an effective Hamiltonian \cite{Brell2014PEPS} \rein{based on Hamiltonian gadget ideas \cite{Kempe-SIAM-2006, PhysRevA.77.062329}.} At least, it is simple enough to afford a direct realization in quantum devices.
 
-To demonstrate the functioning of the approach introduced, we will illustrate this principle on the case of the double semion string-net \cite{Levin2005}. This system comes next in complexity to the elementary toric code. A variant of the double semion model 
-has recently been identified as a model allowing for quantum error correction
-with topological codes that fits into the stabilizer formalism, but which is interestingly not of CSS type
-\cite{SemionErrorCorrection}. 
-The double semion model  is not yet universal for quantum computing  but already requires the full-feathered machinery of 12-spin correlations on the Hamiltonian level \footnote{Note that for the double semion model, there is mapping from a Hamiltonian with 12-local to 6-local plaquette operators. However, the 6-local operators are more complex (they are no longer  product operators), and therefore no straightforward way to implement the Hamiltonian in  MCB networks exists.}.  By passing from physical to virtual space, this complexity gets reduced to a relatively mundane six-spin ring exchange, similar to that, e.g.,   defining the physical qubits of a toric code on a hexagonal lattice \cite{Vijay2015}.  It is then natural to define the hardware realization of the system with direct reference to the virtual space of the tensor network. To this end, various standard elements of tensor network constructions, e.g.,  Bell state projections, one-dimensional (1D) matrix product operators (MPOs), or repetition code qubits, all need to be implemented on the device level. A principal observation of this work is that networks of tunnel-coupled low capacitance quantum dots harboring Majorana bound states  --- Majorana Cooper boxes (MCBs) in the jargon of the field \cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017} --- are optimally suited to this task. 
+To demonstrate the functioning of the approach introduced, we will illustrate this principle on the case of the double semion string-net \cite{Levin2005}. This system comes next in complexity to the elementary toric code \rein{and its realization would represent a key step forward in the context of quantum information processing. In fact, a variant of the double semion model has recently been shown to allow for quantum error correction with topological codes \cite{SemionErrorCorrection}.
+Interestingly, while the model fits into the conventional stabilizer formalism, it is not of Calderbank-Shor-Steane (CSS) type.} 
+The double semion model is not yet universal for quantum computing but already requires the full-feathered machinery of 12-spin correlations on the Hamiltonian level. \rein{We note that for the double semion model restricted to the ground state space of all vertex operators, there is a mapping from a Hamiltonian with 12-local to 6-local plaquette operators \cite{SemionErrorCorrection}. However, the resulting 6-local operators have a more complicated structure and, in particular, they are no longer given by product operators. As a consequence, there is no straightforward way to implement the corresponding Hamiltonian. Instead, we here point out that} by passing from physical to virtual space, this complexity gets reduced to a relatively mundane six-spin ring exchange similar to that, e.g., defining the physical qubits of a toric code on a hexagonal lattice \cite{Vijay2015}.  It is then natural to define the hardware realization of the system with direct reference to the virtual space of the tensor network. To this end, various standard elements of tensor network constructions, e.g.,  Bell state projections, one-dimensional (1D) matrix product operators (MPOs), or repetition code qubits, all need to be implemented on the device level. A principal observation of this work is that networks of tunnel-coupled low capacitance quantum dots harboring Majorana bound states  --- Majorana Cooper boxes (MCBs) in the jargon of the field \cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017} --- are optimally suited to this task. 
 
-While this may be true also for more general tensor networks, it certainly is the case for the projected entangled pair state required in our present application.  For a preliminary impression of the hardware setup required to realize a double semion string-net, see Fig.~\ref{fig:DS} below, where the boxes represent MCBs, red and blue lines are tunneling bridges (short quantum wires), and the triangles are mere guides to the eye. (Not shown in the figure are side gates next to the tunneling links required to run a one-time calibration procedure, likewise required in the realization of, e.g., a Majorana surface code 
+While this may be true also for more general tensor networks, it certainly is the case for the projected entangled pair state\rein{s (PEPS)} required in our present application.  For a preliminary impression of the hardware setup required to realize a double semion string-net, see Fig.~\ref{fig:DS} below, where the boxes represent MCBs, red and blue lines are tunneling bridges (short quantum wires), and the triangles are mere guides to the eye. (Not shown in the figure are side gates next to the tunneling links required to run a one-time calibration procedure, likewise required in the realization of, e.g., a Majorana surface code 
 \cite{PhysRevLett.116.050501,PhysRevB.94.174514,PhysRevLett.108.260504,PhysRevX.6.031016,Hoffman16,Roy2017}.) We emphasize that the structure does not include elements truly adverse to present-date experimental realization. Specifically, their operation does not require magnetic field interferometry or time varying external voltage sources. The structures rather are static in that the ground state of the tunnel- and capacitively coupled network is the double semion state. AC operations may be required to create anyonic excitations in the system or for the measurement of local state characteristics. However, these are operations beyond the scope of the current text. 
 
 In essence, we propose the double semion system as a case study  for a conceptually novel avenue to the realization and quantum simulation of topological quantum matter. The approach involves bridging between Hamiltonian and tensor network descriptions of topological matter
 in a fresh mindset, and from there on to hardware implementations. Here tensor networks are thus not considered as a numerical 
 framework to study interacting quantum matter \cite{Orus-AnnPhys-2014,AreaReview,VerstraeteBig,Orus-AnnPhys-2014}, 
-for which tensor network states and in particular projected entangled pair states (PEPS) \cite{PEPSOld, iPEPS}
+for which tensor network states and\rein{, in particular, PEPS }\cite{PEPSOld, iPEPS}
 are well known and for which they have originally been suggested \cite{DMRGWhite92}. They are also not used in an
 a-posteriori approach of capturing complex phases of matter in a mathematically precise and conceptually clear
 fashion \cite{TopologicalOrderInPEPS,PEPSTopology,ClassificationPhases,PhysRevB.81.064439,PhysRevB.95.245127,FermionicMPO,1409.2150}. 
@@ -296,7 +290,7 @@ The double semion system is ideally suited to illustrate the principle because i
 The remainder of this work is structured as follows. In Sec.~\ref{sec2}, we discuss the low-energy theory for arbitrary MCB networks.  In particular, we introduce novel design principles based on destructive interference mechanisms, see Sec.~\ref{sec2d}, which are key to the constructions put forward below.  In Sec.~\ref{sec3}, we show that high-order qubit interactions can be engineered in simple MCB networks based on these design principles.  In particular, for 1D structures of coupled MCBs, we establish a link to MPOs and other key elements of tensor network states.  Next, after a general discussion of string-nets (in particular, of the double semion system) and their representation in terms of tensor networks in~Secs.~\ref{sec4a} and \ref{sec4b}, we present the MCB network realization for the ground state of the double semion model in Sec.~\ref{sec4c}.  This work concludes with an outlook in Sec.~\ref{sec5}. Technical details 
 related to Sec.~\ref{sec4c} can be found in the Appendix.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Majorana Cooper Box Networks}\label{sec2}
 
 In this section we discuss how networks of tunnel coupled MCBs give rise to an effective  theory containing engineered many-body interactions. We begin with a review of the smallest unit, the MCB  \cite{Beri2012,Beri2013,Altland2013,Plugge2017,Karzig2017}, and then apply perturbation theory to demonstrate how several MCBs connected by tunnel bridges define an effective low energy effective theory. We conclude the section with a discussion of design principles controlling and constraining the correlations present in this network.
@@ -429,16 +423,12 @@ prefactor $A(k,s,d)$ collects all tunneling amplitudes and the (inverse) excitat
 \hat O^{(k)}_d = \sum_{s} \hat O^{(k)}_{s,d} \;. \label{eq:unordered}
 \end{equation}
 
-
-
-
 \subsection{Destructive interference mechanisms and Hamiltonian design} \label{sec2e}
 
 Since the prefactor $A(k,s,d)$ in Eq.~\eqref{eq:decompose} decays exponentially with the loop length $k$, dominant contributions to $\hat H_{\rm eff}$ 
 originate from short loops involving just a few qubit operators.
 This fact poses a serious problem for engineering complex quantum systems. In particular, fixed-point Hamiltonians exhibiting topological order, e.g., string-net models, generically rely on the presence of high-order many-qubit interactions \cite{Levin2005,Fidkowski2009,Wen2017}, see Sec.~\ref{sec4a}. A key point of our work is to design MCB network structures where unwanted low-order contributions due to short loops are automatically eliminated by destructive interference.  
-
-Based on these design ideas, one can largely tune the effective Hamiltonians in a desired fashion. We expect this to be of general interest for \emph{quantum simulation} beyond the specific application of generating topological models.
+Based on these design ideas, one can largely tune the effective Hamiltonians in a desired fashion. We expect this to be of general interest for quantum simulations, beyond the specific application of generating topological models.
 We next present two different mechanisms effecting such type of loop cancelation.
 
 \emph{Loop cancelation by symmetry ---}
@@ -465,7 +455,7 @@ from a simpler \emph{reduced graph} obtained by collapsing each MCB to a single 
 see Fig.~\ref{fig:ex2}(b,d) for examples.
 For convenience, vertices with overlapping $T_i$ operators are now marked by a different color (black in Fig.~\ref{fig:ex2}). If the reduced graph has a reflection symmetry, 
 mapping edges to edges and vertices to vertices of the same color, 
-every sequence $s$ is uniquely mapped onto a mirror sequence with the same energy product. We note that the charging energies of the individual MCBs need not be identical in order to guarantee invariance of the inverse energy product under the described reflection.  In fact, charging energies do not appear in our definition of a reduced graph.  
+every sequence $s$ is uniquely mapped onto a mirror sequence with the same energy product. \rein{We note that the charging energies of the individual MCBs need not be identical in order to guarantee invariance of the inverse energy product under the described reflection.  In fact, charging energies do not appear in our definition of a reduced graph.  }
 If the reflection symmetry also interchanges an odd number of overlapping $T_i$ pairs,
 this map defines a loop-canceling permutation $\Pi[s]$. 
 
@@ -517,23 +507,25 @@ In practice, the loop phase may be calibrated in an initial step by adjusting th
 value of $\phi_{\rm loop}$ in Eq.~\eqref{eq:cases} has been realized. We expect this calibration technique to be important when 
 building complex structures from elementary building blocks.
 
-Due to the finite precision of the calibration process and due to noise-induced phase fluctuations, the suppression of the above short loop terms may not be perfect. We can account for this fact by regarding the corresponding qubit operators as small perturbations to the effective Hamiltonian. If the unperturbed effective Hamiltonian 
-$\hat H_{\rm eff}$ is topologically ordered, 
-%the stability of the associated fixed point implies a finite phase fluctuation variance %which can be tolerated.
-then the error terms $\hat V= \sum_{i} V_{i} $ arising from the imperfect calibration of the loop phases $\Delta \phi_i$ leading to
-\begin{equation}
-\hat H_{\rm eff}'= \hat H_{\rm eff} + \hat V 
-\end{equation}
-will satisfy the conditions of 
-Ref.~\cite{1001.0344} that show the stability of topological order under local
-perturbations, if $\|V_{i}\|$ is sufficiently small for all $i$. That is to say, our construction inherits the robustness of topological order established in Ref.~\cite{1001.0344}.
+\rein{By the above calibration process, one can in practice only adjust loop phases up to a finite accuracy window. 
+As a consequence, the suppression of short-loop contributions by the loop cancelation mechanism may not be perfect.
+One can account for this fact by regarding the corresponding qubit operators, $\hat V_i$, as small perturbations to the unperturbed effective Hamiltonian, 
+$\hat H_{\rm eff}$,  describing  a topologically ordered phase.
+The inclusion of error terms then implies the Hamiltonian 
+$\hat H_{\rm eff}'= \hat H_{\rm eff} + \sum_i \hat V_i$.
+Formally, if all $ \|\hat V_{i} \|$ are sufficiently small, the perturbed Hamiltonian
+$H'_{\rm eff}$  will satisfy the conditions of Ref.~\cite{1001.0344} where the stability of topological order under small local
+perturbations has been demonstrated explicitly.  This implies that a finite window for tolerable loop phase calibration errors must exist. Within this window, our construction inherits the 
+robustness of topological order as established in Ref.~\cite{1001.0344}.  In Sec.~\ref{sec4c}, we return to this 
+point for the specific case of the double semion model. }
 
 \emph{Composite loop patterns ---}
 Finally, we investigate how the design mechanisms can be transferred to general closed paths. It is straightforward to show that the contribution associated to a disjoint union of loops factorizes into the product of the single loop operators up to a real positive proportionality constant (a combinatorial prefactor) and thus such contributions vanish if one of the loops vanishes. 
-For self-intersecting closed paths cancelation by symmetry is still applicable in the same way as explained above by considering the symmetries of the reduced graph and the sign change of the induced permutation, since the existence of the cancelation permutation $\Pi$ is not restricted to act on a simple closed loop. 
+\rein{For self-intersecting closed paths, noting that a loop-canceling permutation $\Pi$ is not restricted to act on a simple closed loop, our
+symmetry cancelation arguments --- examining the symmetries of the reduced graph and the sign change of the induced permutation --- continue to hold.
 
-Similiarly, we can investigate the elimination of self-intersecting paths by phase tuning. A general oriented closed path with intersections can be partitioned into non-intersecting closed sub-paths. The path is then specified by a collection $\{(d_i,o_i)\}$ of $n$ sub-paths $d_i$ and their orientations, $o_i$.  Due to charge neutrality every such system is equivalent to an assembly of $n$ closed oriented non-intersecting loops. A non-oriented parent path defines all different orientation patterns of its sub-paths. From all possible $2^n$ orientation patterns only the ones subject to the constraint that the number of paths ending and starting at each vertex is the same have to be considered, since the others are at odds with charge neutrality. If all those patterns are such that they contain at least  one oriented loop with canceling loop phase ($\pm \pi/2$ for even or $0,\pi$ for odd length) the parent path is subject to cancellation. For an example, consider the (unoriented) loops in Fig.~\ref{fig:compose}. The left length-2 loop $\hat L= \hat L_+ + \hat L_-=0$ vanishes due to phase cancellation while the right length-2 loop $\hat R=\hat R_+ + \hat R_-$ has an arbitrary loop phase and does not vanish. The closed path of length-4 $\hat O^{(4)}$ obtained by concatenation of $\hat L$ and $\hat R$ decomposes into two oriented segments, the left and the right loop with clockwise or anticlockwise orientations and thus fulfills the aforementioned criterion. The closed path now be expressed as a sum $\hat O^{(4)}=O^{(4)}_{++}+O^{(4)}_{+-}+O^{(4)}_{-+}+O^{(4)}_{--} \propto (\hat L_+ + \hat L_-)(\hat R_+ + \hat R_-)=0$. 
-
+Similiarly, we can investigate the elimination of self-intersecting paths by phase tuning. A general oriented closed path with intersections can be partitioned into non-intersecting closed sub-paths. The path is then specified by a collection $\{(s_i,d_i)\}$ of $n$ sub-paths, $s_i$, along with their orientations, $d_i$.  Due to charge neutrality, every such system is equivalent to an assembly of $n$ closed oriented non-intersecting loops. We next note that a non-oriented parent path defines all different orientation patterns of its sub-paths. From all possible $2^n$ orientation patterns, only those with the same number of paths ending and starting at each vertex will satisfy charge neutrality and thus need to be taken into account. If all those patterns are such that they contain at least one oriented loop with a loop canceling phase, see Eq.~\eqref{eq:cases}, the parent path will be subject to cancelation as well. For example, consider the (unoriented) loops shown in Fig.~\ref{fig:compose}, where the left length-2 loop, $\hat L= \hat L_+ + \hat L_-=0$, vanishes due to phase cancelation while the right length-2 loop, $\hat R=\hat R_+ + \hat R_-$, has an arbitrary loop phase and does not vanish by itself. The closed length-4 path $\hat O^{(4)}$ obtained by concatenation of $\hat L$ and $\hat R$ can then be decomposed into two oriented segments, namely the left and the right loop with clockwise or anticlockwise orientations. It thus fulfills the aforementioned criterion and $\hat O^{(4)}=O^{(4)}_{++}+O^{(4)}_{+-}+O^{(4)}_{-+}+O^{(4)}_{--} \propto (\hat L_+ + \hat L_-)(\hat R_+ + \hat R_-)=0$ implies that the length-4 path is subject to phase cancelation.
+}
 
 \begin{figure}
 \includegraphics[width=0.72 \columnwidth]{fig/compose.pdf}
@@ -541,32 +533,24 @@ Similiarly, we can investigate the elimination of self-intersecting paths by pha
 \label{fig:compose}
 \end{figure}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Engineering multi-qubit operators}\label{sec3}
 
 We next outline  how the  design principles of Sec.~\ref{sec2e} may be applied to engineer complex quantum systems with \emph{high-order qubit interactions} in MCB networks. 
 In order to design 2D topological models, we have to formulate new
 design principles to make sure that we arrive at models that are in the anticipated phase. We do so by building upon the 
 framework of Hamiltonian gadgets 
-\cite{Kempe-SIAM-2006,PhysRevA.77.062329,Brell2014PEPS,Bartlett06}. Hamiltonian gadgets
-are tools generating Hamiltonian terms with a higher locality in certain orders of perturbation theory. Introduced
-in Ref.\ \cite{Kempe-SIAM-2006} as a method to generate three-body terms, the idea has been generalized in Ref.\
-\cite{PhysRevA.77.062329} to provide perturbative gadgets at arbitrary orders. In this work, Hamiltonian gadgets are used in a 
-specific flavor, in that suitable orders of perturbation theory are made use of to generate PEPS from basic building blocks
-\cite{Brell2014PEPS,Bartlett06}. We will see that it is this kind of Hamiltonian gadget that allows for engineering 
-the anticipated topological fixed point models from mesoscopic building blocks.
+\cite{Kempe-SIAM-2006,PhysRevA.77.062329,Brell2014PEPS,Bartlett06} \rein{which
+are tools for generating Hamiltonian terms with high locality in certain orders of perturbation theory. Introduced
+in Ref.~\cite{Kempe-SIAM-2006} as a method to generate three-body terms, the idea has been generalized in 
+Ref.~\cite{PhysRevA.77.062329} to provide perturbative gadgets at arbitrary order. In our work, Hamiltonian gadgets appear in a 
+specific flavor, where suitable orders of perturbation theory are associated with the  generation of PEPS from basic building blocks
+\cite{Brell2014PEPS,Bartlett06}. We will see that this approach gives access to the realization of
+the anticipated topological fixed point models in mesoscopic Majorana platforms.}
 
-
-As an intermediate step, we 
-identify design principles for constructing multi-qubit operators. In Sec.\ \ref{sec4}, these 1D
-structures will be lifted to give rise to the anticipated topological 2D structures. In this endeavor, \emph{tensor networks} \cite{Orus-AnnPhys-2014,AreaReview,VerstraeteBig,SchuchReview}
-will appear, first in 1D structures such as matrix product operators 
+As an intermediate step, we identify design principles for constructing multi-qubit operators. \rein{In this endeavor, \emph{tensor networks} \cite{Orus-AnnPhys-2014,AreaReview,VerstraeteBig,SchuchReview}
+will first appear in 1D structures via matrix product operators (MPOs)
 \cite{Mixed,1367-2630-12-2-025012,raey,MPO_Representations,UndecidableMPO,Bultinck2017}.
-%\cite{PEPSOld,Verstraete-arxiv-2004}. 
-In what follows,
-we begin by discussing effective Hamiltonians describing  rings of $M$ coupled qubits,   as  in Fig.~\ref{fig:tetron_prod}. Such structures will later be used as building blocks for the design of 2D Hamiltonians. Specifically, we aim to demonstrate that they may be characterized in terms of MPOs. This picture will be useful in  demonstrating the option to generate effective interactions beyond the nearest neighbor level.  
+In what follows, we begin by discussing effective Hamiltonians describing  rings of $M$ coupled qubits as in Fig.~\ref{fig:tetron_prod}.  Later on, see Sec.~\ref{sec4}, such 1D structures will be used as elementary building blocks for designing 2D models with topological order. In this way,  effective interactions beyond the nearest-neighbor level can be generated in a systematic manner.  }
 
 \subsection{Product operators}\label{sec3a}
 
@@ -643,8 +627,6 @@ and the $\hat A^i$ are Pauli operators acting on MCB $i$ weighted by tunneling a
 \\  \hat A^i_{10}&=&\alpha_i \hat y \;, \quad \hat A^i_{11}=\beta_i \hat x \;. \label{eq:mpo_ex}
 \end{eqnarray}
 The equivalent qubit tensor network representation is depicted in Fig.~\ref{fig:mpo}(b) where vertical lines indicate the indices $i_k=0,1$ and we used Penrose notation, meaning that index lines without open ends are summed over. Since the index $i_k$ can assume two different values, the bond is said to have bond dimension $D=2$.
-
-
 
 The structure of Eq.~(\ref{eq:mpo_ex}) does not suffice to realize arbitrary $D=2$ MPOs. Specifically each of the summands in Eq.~\eqref{mpo} is constrained to contain an even number of  Pauli-$\hat y$ operators. The latter limitations can be addressed by crossing wires. In general one may consider more complex wirings of neighboring tetrons but apart from changes of the local Pauli bases this does not generate additional operator contents. In particular, it is unclear at this stage how MPOs with bond dimension $D>2$ could be realized without generating 2-body interactions from additional length-2 loops. Future research should address how such limitations can be overcome.
 
@@ -744,12 +726,7 @@ Since the above structures all make reference to sequential ordering, chains of 
 \label{fig:RepetitionMPS}
 \end{figure}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Simulating topological tensor networks}\label{sec4}
-
-
 
 The MCB networks discussed in Secs.~\ref{sec2} and \ref{sec3}
 allow one to realize topological phases with strong entanglement. 
@@ -956,7 +933,7 @@ In a second step, adjacent triangles are connected via Bell pair tunneling bridg
  
 \emph{Vertex Hamiltonian ---} Let us first discuss how the MCB structure shown in  Fig.~\ref{fig:DSMPO} effectively implements the action of the operator $\hat X$ at the vertices of the lattice. This six tetron structure defines a three unit repetition qubit MPO in the sense of Sec.~\ref{sec:SynthDesign}. The three two-tetron blocks at the corners are linked by tunneling amplitudes (all defined to represent hopping in counter clockwise direction) $a_i\simeq -b_i$. As discussed in Sec.~\ref{sec3c}, this defines three repetition qubits at the corners. Equivalently, we may say that the elementary length two tunneling loops define operators $\frac{\text{Re}\left(a_i  b_i^\ast\right)}{2 E_C} \hat z \otimes  \hat z$, where the two factor Pauli operators are defined to act in the Hilbert spaces of the incoming and outgoing virtual states ($\ket{a}$ and $\ket{a'}$, etc., in Fig.~\ref{fig:ATensorDef}). In this way, the ground state of the system implies the parity projection $\ket{a}=\ket{a'}$ central to the action of $\hat X$. 
 
-The links $\alpha_i, \beta_i$ couple different repetition qubits. The minimal loops formed from these couplings generate an operator $\frac{\text{Re}\left(\alpha_i  \beta_i^\ast\right)}{2 E_C} \hat z \otimes  \hat z$, where the two factor Pauli operators act in the Hilbert spaces of virtual states $\ket{a}$ and $\ket{b}$. Recall that the parity of the latter determines the physical state $\ket{i}=\ket{a \oplus b}$ which is no longer represented by an actual hardware degree of freedom, but can always be deduced from the virtual states. Thus, any preferred alignment of the two spins constitutes an unwanted bias to a product state of $\ket{i}=\ket{0}$ at every site. 
+The links $\alpha_i, \beta_i$ couple different repetition qubits. The minimal loops formed from these couplings generate an operator $\frac{\text{Re}\left(\alpha_i  \beta_i^\ast\right)}{2 E_C} \hat z \otimes  \hat z$, where the two factor Pauli operators act in the Hilbert spaces of virtual states $\ket{a}$ and $\ket{b}$. Recall that the parity of the latter determines the physical state $\ket{i}=\ket{a \oplus b}$ which is no longer represented by an actual hardware degree of freedom, but can always be deduced from the virtual states. Thus, any preferred alignment of the two spins constitutes an unwanted \rein{bias to a product state of $\ket{i}=\ket{0}$ at every site.} 
 We use the freedom to choose  $\alpha = \mathrm i \beta$ and effectively suppress these terms. 
 
 The most interesting contribution to the tunneling expansion are the  length-6 loops around the ring.  Following the same logics as in Sec.~\ref{sec3b}, the sum of all anti-clockwise oriented tunneling paths defines an MPO 
@@ -972,33 +949,16 @@ with MPO matrix elements
 \end{align}
 acting on the repetition qubits.
 Using the above restrictions  $a_i=-b_i$, $\alpha_i = \pm \mathrm i \beta_i$,  
-% \begin{align}
-% \hat B^i_{0,0}&=  - \alpha_i a_i(  \hat x \otimes \hat x -  \hat y \otimes \hat y)  \;, \label{eq:B} \\
-% \hat B^i_{0,1}&= \beta_i a_i(\hat x \otimes \hat y + \hat y \otimes \hat x)  \;, \nonumber \\
-% \hat B^i_{1,0}&=\alpha_i a_i( \hat y \otimes \hat x + \hat x \otimes \hat y)  \;, \nonumber \\
-% \hat B^i_{1,1}&=-\beta_i a_i( \hat y \otimes \hat y - \hat x \otimes \hat x) \;.  \nonumber 
-% \end{align}
 \begin{align}
-\hat B^i_{11}&=\pm \mathrm{i}B^i_{00}=  c_i(  \hat x \otimes \hat x -  \hat y \otimes \hat y)  \;, \label{eq:B} \\
+\hat B^i_{11}&=\pm \mathrm{i}B^i_{00}=  c_i(  \hat x \otimes \hat x -  \hat y \otimes \hat y)  \;, \label{eq:B2} \\
 \hat B^i_{01}&=\mp\mathrm{i}B^i_{10}= c_i(\hat x \otimes \hat y + \hat y \otimes \hat x)  \;, \nonumber
-% \hat B^i_{1,0}&=\pm\mathrm{i}c_i(\hat x \otimes \hat y+ \hat y \otimes \hat x  )  \;, \nonumber \\
-% \hat B^i_{1,1}&=c_i(  \hat x \otimes \hat x-\hat y \otimes \hat y ) \;,  \nonumber 
 \end{align}
 with the so far freely adjustable coefficient $c_i:=  \beta_i a_i$. We finally need to choose these parameters such that the sum of the oriented path and its Hermitian conjugate (the reversed path) reproduces the action of $-\hat X$ in~\eqref{eq:xdef2}. A straightforward calculation shows that this is the case for e.g. $c_i =\mathrm{i}$ and $\alpha_i=\mathrm i \beta_i$. With this choice, the relatively simply MCB network defines an effective  tunneling Hamiltonian, $\hat H_v$ which  encodes the essential structure of the double semion vertex.   
-% 	We observe that for $a_i= -b_i$, every $\hat B$ operator is proportional to a logical Pauli ($x$ or $y$) operator acting on the respective repetition code qubit, cf.~Eq.~\eqref{eq:logpauli}.
-% In fact, by tuning the tunneling amplitudes to the values ($\lambda$ real)  
-% \begin{equation}\label{eq:finetuning}
-% a_i=\lambda\;, b_i=\mathrm i\lambda\;, \alpha_i=-\lambda \;, \beta_i=\lambda\;,
-% \end{equation} 
-% all terms apart from $H_x^{(6)}$ will simultaneously disappear from Eq.~\eqref{eq:HDS} by virtue of destructive interference.  In that case, $\hat H_v$ directly yields the $\hat X$ operator,  
-% \begin{equation} \label{eq:HDS2}
-% \hat H_{v} \simeq H_x^{(6)}=- \frac{252\lambda^6}{E_C^5} \hat X \;.
-% \end{equation}
 
 
 \emph{Bell pair bridges and double semion network ---}
 In a final step, we couple individual vertex structures  via Bell bridges as in Fig.~\ref{fig:bell}. These couplings shown in Fig.~\ref{fig:DS} are to generate a locking of the virtual states of neighboring vertices to a Bell state according to the geometry of the tensor network in Fig. \ref{fig:ATensorDef}. The coupling effectively assigns a Bell pair Hamiltonian, $\hat H_{\rm Bell}$ [Eq.~(\ref{eq:bell})], to all (doubled) edges of the underlying honeycomb lattices connecting two vertices
-~\footnote{For completeness, we mention that the coupling always connects vertices of different sublattices. For a connection as indicated in the Fig. \ref{fig:tworings}, the right triangle is identical to the one above. A closer inspection shows that the difference between the operator representing the left triangle differs from the one on the right by interchanging $a$ vs $b$ and $\alpha$ vs $\beta$ which yields a replacement $\hat B_{00}\mapsto \hat B_{11}, \hat B_{11}\mapsto \hat B_{00}, \hat B_{01}\mapsto -\hat B_{10},\hat B_{10}\mapsto - \hat B_{01}$ in Eq. (\ref{eq:B}). However, since the $B_{01}$, $B_{10}$ always appear in pairs, the MPO $O_6$ is the same.}.
+~\footnote{For completeness, we mention that the coupling always connects vertices of different sublattices. For a connection as indicated in the Fig. \ref{fig:tworings}, the right triangle is identical to the one above. A closer inspection shows that the difference between the operator representing the left triangle differs from the one on the right by interchanging $a$ vs $b$ and $\alpha$ vs $\beta$ which yields a replacement $\hat B_{00}\mapsto \hat B_{11}, \hat B_{11}\mapsto \hat B_{00}, \hat B_{01}\mapsto -\hat B_{10},\hat B_{10}\mapsto - \hat B_{01}$ in Eq. (\ref{eq:B2}). However, since the $B_{01}$, $B_{10}$ always appear in pairs, the MPO $O_6$ is the same.}.
 
 
 
@@ -1020,6 +980,9 @@ where $\lambda$ is the absolute value of the tunneling amplitudes $a_i,b_i$ and 
 
 \emph{Practical implementation ---} Fig.~\ref{fig:DS} shows a schematic of the actual hardware layout implementing the construction. The discussion above reflects the importance of an initial calibration procedure which in turn  necessitates the presence of  local gates near each tunneling link. Specifically,  starting from a configuration in which the ($b_i,\beta_i$) are  turned off, interferometric measurements \cite{Plugge2017,Karzig2017}  between all possible Majorana pair combinations around the outer loop defined by the $(a_i,\alpha_i)$ links, followed by subsequent gate voltage tuning, will be applied to fix a possible choice of relative coupling amplitudes  $a_i=-\alpha_i=\lambda$ with $\lambda$ real. In the next step, interferometric measurements and gate voltage readjustments  are carried out for each length-2 loop defined by $(a_i,b_i)$ and $(\alpha_i,\beta_i$) until one has achieved the values of $b_i=-a_i$ and $\beta_i=\mathrm i a_i$, such that we obtain $c_i =\mathrm i \lambda^2$ and $\lambda^2$ is an inconsequential proportionality factor to the value specified above.  In view of the presumed robustness of the topological phases, we do not expect that excessive precision need be applied in these calibration steps. At any rate, they would be performed in an automated manner.
 
+\rein{{\tt add discussion about phase fluctuations that are tolerable}}
+
+
 
 \begin{figure}
 \includegraphics[width=0.9\columnwidth]{fig/tworing.pdf}
@@ -1040,10 +1003,10 @@ notions of topological order.
 
 In this work, we have gone further to show how to engineer a restricted class of matrix product operators with bond dimension $D=2$, where network structures emerge by building on Hamiltonian gadget techniques. However, one may go beyond the level of tetrons to design hexon or polygon networks of advanced flexibility and versatility.  At any rate, it will be important to extend the scope and to understand in generality  which types of matrix product operators can be designed in such architectures. The flexibility of the Majorana platform may in fact allow for large classes of matrix product operators while  avoiding undesired few-qubit interactions.  However, further research is required to substantiate this expectation. 
 
-Turning to applications, it will be interesting to explore the quantum error correcting capabilities of the semion and double model
-beyond a CSS picture further \cite{SemionErrorCorrection}. Having established a first model that would allow for realizing this phase of matter,
-it seems a natural step forward to quantitatively assess the advantages arising from such a picture of quantum error correction. 
-It will be equally exciting  to explore other phases of matter that can be simulated within the 
+\rein{Turning to applications, it will be interesting to further explore the quantum error correcting capabilities of the double semion model
+beyond a CSS picture \cite{SemionErrorCorrection}. Given our approach towards realizing this phase of matter,
+a natural next step is to quantitatively assess the advantages arising from such a picture of quantum error correction. 
+It will be equally exciting}  to explore other phases of matter that can be simulated within the 
 present framework. For example, the Majorana dimer models \cite{PhysRevB.94.115115,PhysRevB.94.115127} are a class of systems which appear to be within direct reach.
 From the perspective of quantum information, realizing
 Fibonacci anyon models \cite{Levin2005}  and exploring  implications 
