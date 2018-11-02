@@ -1,0 +1,217 @@
+﻿Dear Editors,
+
+we would like to resubmit our manuscript XV10331 for publication in PRX. 
+ 
+First of all, we thank both Referees for their efforts in preparing the 
+reports.  We have carefully taken into account their valuable remarks in 
+preparing the revised manuscript.   
+We are aware that in view of their recommendation to transfer our work to 
+a more specialized journal (such as PRB), our resubmission to PRX may come as 
+a surprise -- and we did not reach this decision lightly.  
+However, we feel very strongly about the importance of this particular work.  
+As we argue below, the arguments and concerns raised by the Referees against 
+PRX suitability can be refuted in a sound and clear manner.  
+We thus kindly request that our manuscript be reconsidered for publication in PRX.
+
+Let us briefly summarize our key advances justifying publication in PRX. 
+
+(i) Our work describes the first blueprint for realizing a nontrivial 
+(beyond toric code) string net in a concrete physical platform. 
+Given the importance of string net models for the foundations of topological 
+matter theory (cf. the recent review by Wen [2]), the fact that no 
+realizations for these models (even in principle) are known so far 
+amounts to a vast gap between theory and experiment in a topical key 
+area of physics.  Our paper is the first to suggest a promising new 
+route toward closing this gap.   
+We show that platforms based on Majorana Cooper box networks have 
+unique potential in that regard.  Such systems are presently being developed in several labs worldwide.  The realization of our proposal is certainly 
+challenging, but in view of the ongoing rapid pace of Majorana experiments, 
+it could very well be feasible within, say, 5-10 years.   
+ 
+(ii) Albeit the double semion model (used as concrete application in our 
+paper) does not offer universal quantum computing capabilities, it is 
+of great interest for quantum error correction schemes beyond CSS type, 
+see the important recent work in Ref.[42].  In fact, the arguments in Ref.[42] 
+clearly show that a physical realization of the double semion model would
+represent exciting progress both on a fundamental level (in particular, 
+featuring the complexity of 12-local spin interactions) and from 
+a quantum information perspective.  This point is now also stressed in the 
+Introduction of the revised manuscript.
+
+(iii) Our scheme is stable and robust: 
+While the symmetry-based loop cancelation mechanism is completely robust 
+even in the presence of imperfections, our construction also relies on the 
+possibility of loop cancelation by phase tuning.  Since in practice phases 
+can only be adjusted to finite precision, one may be concerned with the realizability of our proposal (see report by the second Referee).  
+We now address this important point in detail.  On a formal level, it is 
+known from Ref.[66] that sufficiently small errors in the loop phases 
+can be tolerated without destroying the topological fixed point.  
+We quantify these bounds now for the double semion model and provide 
+conditions for an experimental realization.  
+
+(iv) Our work also raises new prospects for quantum simulations of topological
+phases: we formulate a systematic and tunable approach for generating 
+complicated high-order spin interactions. Such models are out of reach for all 
+other known quantum simulation architectures.  
+
+
+Next we turn to a detailed discussion of both reports and explain the
+corresponding changes in the manuscript.  
+
+------------------------
+Reply to First Referee
+------------------------
+
+> This paper explores the application of tensor networks to describe  
+> many-body systems via Majorana physics, in particular using Majorana 
+> Cooper Boxes. The paper is very technical though nicely written, and 
+> makes a useful contribution in that it describes how to 
+> quantum-simulate some topological phases of matter using tensor 
+> networks of Majoranas. However, I don't think that it meets the PRX 
+> criteria of being fundamentally and technically innovative.   
+
+We respectfully disagree with this characterization of our work. In view of the 
+importance of string net models for theories of topological matter, our 
+route toward implementing these models in a concrete platform is 
+novel both on a fundamental level and on a technical level.   
+We have revised the Introduction and the Conclusions in order to 
+clarify this point. 
+
+> After all, tensor networks have already been extensively used to
+> describe topological phases of matter, as the authors explain well,
+> but also to describe Majorana physics (for instance, when dealing with
+> 2d chiral topological phases).  Nevertheless, the paper definitely 
+> deserves publication in some form, perhaps as a regular article in a 
+> specialized Physical Review journal.
+
+While the first sentence above holds true in general, it completely overlooks 
+our key achievements: tensor networks are here employed neither to 'describe' 
+topological phases of matter (which indeed has been done many times before -- 
+this program is coming close to completion in the literature) nor Majorana 
+physics.  Instead we put the known connection between tensor networks and topological order upside down.  This step allows us to formulate novel design principles for actually building string net models exhibiting nontrivial topological order.  We have revised the Introduction and the Conclusions 
+to make these points clearer.
+
+> My only further comment is that I would encourage the authors to
+> explain better the significance of the network of Majoranas for
+> quantum simulation, as well as to try to make some of the technical
+> explanations more transparent. 
+
+We thank the Referee for these helpful suggestions. 
+First, throughout the paper, we have tried to formulate technical explanations 
+in a more accessible manner. We have also given more credit to precursors of 
+Hamiltonian gadget ideas, in particular by including the new references [40,41,48,49,67,80-82].
+Second, our work is important for the field of quantum simulations, see 
+point (iv) above.  Known quantum simulation platforms, e.g. cold atoms in 
+optical lattices as most prominent example, are commonly restricted to 
+2-local interactions.  Our ideas allow to generate sophisticated, say, 
+12-local spin interactions in a tunable fashion. To the best of our 
+knowledge, no other blueprint for quantum simulations can achieve this 
+degree of control even in principle.  We now emphasize this point in more 
+detail in the revised manuscript, see in particular the second paragraph 
+of the Introduction.
+
+-------------------------
+Reply to Second Referee
+-------------------------
+
+> Inspired by tensor network techniques, and Majorana hardware, the 
+> authors propose a path toward simulating a topological order. The 
+> techniques developed could be used beyond their specific applications 
+> and so are useful in there own right. They first review the required 
+> Majorana hardware, followed by a perturbative analysis of interacting 
+> Majorana qubits, which allow for realizations of multi-qubit 
+> interactions, that are then used in the proposed realization of the 
+> double semion model. 
+
+> The paper is well written and combines multiple areas of research. The 
+> calculations look sound and the concepts are clear. However, I am 
+> concerned about the stability of the quantum simulation, especially in 
+> view of realistic implementations; see comments below. That said, the 
+> idea to use tensor network representations of quantum wave functions 
+> to design a topologically ordered phase is novel. Despite this novel 
+> idea I do not see the paper meeting the exceptional standards of PRX. 
+
+We thank the Referee for the helpful and elaborate report, confirming 
+on particular the novelty of our approach.  The Referee seems concerned
+about stability issues which we address below, see also point (iii) above.
+We are confident that with our answers to this point, taking into
+account the key advances listed above, the Referee can now agree
+with our opinion about PRX suitability of this paper.
+
+> Below are some more detailed comments and concerns: 
+>
+> p.1 paragraph two. It is known that string nets cannot yield all
+> gapped bosonic topological orders. They only produce non-chiral
+> topological orders (chiral central charge = 0).
+
+We have corrected this point by referring to string nets as describing
+all *non-chiral gapped bosonic* topological orders in the Introduction
+(second paragraph). We also cite important work by Levin and Wen in this 
+context.
+
+> p. 2. This is a minor point, in various places, the authors mention
+> that the double semion model requires a 12 spin interaction when
+> written on the honeycomb lattice. This is not true, the 12-spin
+> interaction can be reduced to a 6-spin plaquette term. To do so, one
+> assumes to be in the ground state of the vertex term (which you need
+> to do in order to define the plaquette term) and uses the fact that a
+> \sigma^z on the external leg of a plaquette is equal to a \sigma^z
+> \otimes \sigma^z on the pair of adjacent edges living at the boundary
+> of the plaquette and straddling the external edge.
+
+We thank the Referee for raising this interesting point, which is actually 
+more subtle. We now discuss this issue in the Introduction (see the passage 
+"We note that for the double semion model restricted to the ground state 
+space..." in the fifth paragraph).  After a closer look at this mapping,
+we observe that the 6-local Hamiltonian plaquette operator cannot be written 
+as product operator.  Therefore there is no straightforward way to implement 
+it as an effective Hamiltonian (e.g. using a tunnel-coupled MCB network, or 
+in any other known physical platform). 
+
+> p.8 loop cancellation by symmetry. In a realistic scenario the
+> charging energies will not be uniform across all MCB's. I am concerned
+> that small deviations in the charging energy for various islands may
+> destroy this loop cancellation property. Such loops would appear at
+> lower order in perturbation theory and so they may be strong in
+> comparison to the subleading perturbations present at the fine tuned
+> point.
+
+Fortunately, deviations in the charging energies of the individual MCBs 
+are unproblematic and cannot spoil the generality of loop cancelation 
+by symmetry.  In fact, for invariance of the inverse energy product under 
+the described reflection symmetry, it suffices to analyze the "reduced graph"
+defined in Sec.II.E.  In that definition, the values of the charging 
+energies do not enter at all.  Our scheme is therefore fully robust against 
+such imperfections.  We now explain this point in the paragraph after Eq.(13).
+
+> p.8 loop cancellation by phase tuning. Again, a small perturbation
+> away from this fine tuned point may not be small when compared to the
+> subleading terms.
+> I understand that such a simulation is possible, at least in
+> principle, but it would be nice if the authors could quantify how
+> tolerant the quantum phase/simulation is to small perturbations around
+> the various fine tuned limits.
+
+In contrast to the previous point (where imperfections do not matter), the 
+situation is more dangerous concerning loop cancelation by phase tuning.  
+Indeed, phase calibration imperfections must be sufficiently small for 
+stability of the topological phase.  Nonetheless, there exists a finite 
+window of precision around the ideal loop phase values where deviations 
+can be tolerated.  On a formal level, this has been studied in depth in 
+Ref.[66] where the existence of a finite window of precision has been proven.  
+The revised manuscript now contains a discussion of the stability of 
+topological order under the (quasi-)local perturbations due to loop phase imperfections.  The general arguments from Ref.[66] are discussed 
+in Sec.II.E (paragraph after eq.17).  Given the architecture we consider and 
+the approach taken, the Hamiltonian  terms arising from phase tuning imperfections will be local and satisfy the conditions to prove stability. 
+The arguments of Ref. [66] thus imply that our scheme can tolerate small imperfections in the phase tuning.  At the end of Sec. IV.C, we give 
+specific estimates for our double semion model realization.  These estimates
+can guide experimentalists in searching for implementations of our proposal.
+
+
+To conclude, we believe that our work indeed meets the exceptional standards 
+of PRX.  We propose a first robust quantum simulation platform for nontrivial
+string net phases allowing for practical applications in quantum error 
+correction. 
+
+Yours sincerely,
+Jens Eisert (on behalf of all authors)
